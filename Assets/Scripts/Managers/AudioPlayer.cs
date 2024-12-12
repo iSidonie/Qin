@@ -11,7 +11,6 @@ public class AudioPlayer : MonoBehaviour
     public AudioMixer audioMixer;
 
     private bool isPlaying = false;
-    private bool isABLoop = false;
     private float currentTime;
     private float playbackSpeed = 1.0f;
 
@@ -114,22 +113,6 @@ public class AudioPlayer : MonoBehaviour
     }
 
     /// <summary>
-    /// AB循环控制。
-    /// </summary>
-    public bool ToggleABLoop()
-    {
-        if (isABLoop)
-        {
-            isABLoop = false;
-        }
-        else
-        {
-            isABLoop = true;
-        }
-        return isABLoop;
-    }
-
-    /// <summary>
     /// 跳转到指定的时间。
     /// </summary>
     public void SeekToTime(float targetTime)
@@ -141,7 +124,7 @@ public class AudioPlayer : MonoBehaviour
             currentTime = targetTime;
             AudioTimeUpdated?.Invoke(currentTime, audioSource.clip.length);
 
-            SetPlay();
+            // SetPlay();
         }
     }
 
@@ -155,11 +138,6 @@ public class AudioPlayer : MonoBehaviour
     public bool IsPlaying()
     {
         return isPlaying;
-    }
-
-    public bool IsABLoop()
-    {
-        return isABLoop;
     }
 
     public void SetPlay()

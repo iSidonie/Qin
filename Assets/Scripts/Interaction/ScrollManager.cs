@@ -12,7 +12,7 @@ public class ScrollManager : MonoBehaviour
     public float scrollSpeedFactor; // 自动滚动速度因子
     public float edgeThreshold;    // 距离边缘多少像素触发滚动
 
-    public float scrollDuration = 0.5f; // 滚动动画时长
+    // public float scrollDuration = 0.5f; // 滚动动画时长
     public float userInteractionDelay = 3f; // 用户交互后的延迟时间
 
     private RectTransform viewportRect;  // Scroll View 的 Viewport
@@ -36,6 +36,26 @@ public class ScrollManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+        
+    private void OnEnable()
+    {
+        NotationSelectHandler.Instance.OnNotationStartDragging += (value) => StartDragSelection();
+        NotationSelectHandler.Instance.OnNotationEndDragging += StopDragSelection;
+
+        NotationSelectHandler.Instance.OnNotationStartDragging += (value) => SetUserInteraction();
+        NotationSelectHandler.Instance.OnNotationEndDragging += SetUserInteraction;
+        NotationSelectHandler.Instance.OnNotationSelecting += (value) => SetUserInteraction();
+    }
+
+    private void OnDisable()
+    {
+        NotationSelectHandler.Instance.OnNotationStartDragging -= (value) => StartDragSelection();
+        NotationSelectHandler.Instance.OnNotationEndDragging -= StopDragSelection;
+
+        NotationSelectHandler.Instance.OnNotationStartDragging += (value) => SetUserInteraction();
+        NotationSelectHandler.Instance.OnNotationEndDragging += SetUserInteraction;
+        NotationSelectHandler.Instance.OnNotationSelecting += (value) => SetUserInteraction();
+    }
 
     void Start()
     {
@@ -57,18 +77,12 @@ public class ScrollManager : MonoBehaviour
         {
             AutoScrollIfNeeded();
         }
-
-        //// 检测鼠标左键点击
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    HandleMouseClick();
-        //}
     }
 
     /// <summary>
     /// 平滑滚动到指定元素中央。
     /// </summary>
-    public void ScrollToCenter(RectTransform target)
+    public void ScrollToCenter(RectTransform target, float time = 0.5f)
     {
         if (isUserInteracting || target == null || scrollView == null)
             return;
@@ -80,7 +94,7 @@ public class ScrollManager : MonoBehaviour
         float targetPosY = CalculateScrollPosition(target);
 
         // 平滑滚动到目标位置
-        SmoothScrollToPosition(targetPosY);
+        SmoothScrollToPosition(targetPosY, time);
     }
 
     /// <summary>
@@ -101,13 +115,13 @@ public class ScrollManager : MonoBehaviour
     /// <summary>
     /// 使用 DoTween 平滑滚动到目标位置。
     /// </summary>
-    private void SmoothScrollToPosition(float targetPosY)
+    private void SmoothScrollToPosition(float targetPosY, float time)
     {
         // 如果有未完成的滚动动画，停止它
         scrollTweener?.Kill();
 
         // 创建新的滚动动画
-        scrollTweener = scrollView.DOVerticalNormalizedPos(targetPosY, scrollDuration)
+        scrollTweener = scrollView.DOVerticalNormalizedPos(targetPosY, time)
             .SetEase(Ease.InOutQuad).OnComplete(() =>
             {
                 isAutoScrolling = false;
@@ -126,7 +140,7 @@ public class ScrollManager : MonoBehaviour
         SetUserInteraction();
     }
 
-    private void SetUserInteraction()
+    public void SetUserInteraction()
     {
         // 用户正在交互
         isUserInteracting = true;
@@ -173,8 +187,6 @@ public class ScrollManager : MonoBehaviour
         // 获取鼠标相对于 Viewport 的局部坐标
         RectTransformUtility.ScreenPointToLocalPointInRectangle(viewportRect, Input.mousePosition, null, out Vector2 localMousePosition);
         
-        //// 根据 Pivot = (0, 1) 调整 Y 坐标
-        //float adjustedY = localMousePosition.y + viewportRect.rect.height;
         // 根据 Pivot = (0, 1) 调整 Y 坐标
         float adjustedY = localMousePosition.y;
 
@@ -201,28 +213,6 @@ public class ScrollManager : MonoBehaviour
             scrollView.verticalNormalizedPosition = Mathf.Clamp(scrollView.verticalNormalizedPosition, 0f, 1f);
         }
     }
-    
-    private void HandleMouseClick()
-    {
-        // 检查是否点击了 UI 元素
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            // 鼠标在 UI 上，不执行空白区域操作
-            return;
-        }
-
-        // 检查双击
-        float currentTime = Time.time;
-        if (currentTime - lastClickTime <= doubleClickThreshold)
-        {
-            OnDoubleClickEmptySpace();
-            lastClickTime = -1f; // 重置，防止多次触发
-        }
-        else
-        {
-            lastClickTime = currentTime;
-        }
-    }
 
     /// <summary>
     /// 双击空白区域触发的操作。
@@ -233,5 +223,13 @@ public class ScrollManager : MonoBehaviour
 
         // 调用播放/暂停功能
         AudioPlayer.Instance.TogglePlayPause();
+    }
+
+    public void SetEnable(bool isEnable)
+    {
+        if (scrollView != null)
+        {
+            scrollView.enabled = isEnable; // 禁用滚动
+        }
     }
 }

@@ -1,9 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public enum NotationState
-{
+{   
     Hidden,      // 隐藏状态（透明度为 0）
     Selected,    // 手动选择状态（默认颜色，透明度为 1）
     Highlighted  // 播放高亮状态（高亮颜色，透明度为 1）
@@ -36,6 +36,8 @@ public class NotationViewManager : MonoBehaviour
 
     private Dictionary<int, Image> notationImages = new Dictionary<int, Image>();
     private int currentHighlightedId = -1;
+    private int rangeStart = 0;
+    private int rangeEnd = -1;
     
     void Awake()
     {
@@ -48,6 +50,18 @@ public class NotationViewManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnEnable()
+    {
+        NotationPlaybackManager.Instance.OnNotationChanged += (value1, value2) => UpdateHighlight(value2);
+        NotationSelectionManager.SelectedChanged += UpdateSelection;
+    }
+
+    private void OnDisable()
+    {
+        NotationPlaybackManager.Instance.OnNotationChanged += (value1, value2) => UpdateHighlight(value2);
+        NotationSelectionManager.SelectedChanged -= UpdateSelection;
     }
 
     void Start()
@@ -71,6 +85,8 @@ public class NotationViewManager : MonoBehaviour
                 CreateNotationUI(notation);
             }
         }
+
+        ScrollManager.Instance.ScrollToCenter(notationImages[0].GetComponent<RectTransform>(), 0f);
     }
 
     /// <summary>
@@ -91,13 +107,6 @@ public class NotationViewManager : MonoBehaviour
         
         if (notation.type == "Main")
         {
-            //// 获取或添加 ExButton 组件
-            //ExButton exButton = notationImage.GetComponent<ExButton>();
-            //if (exButton == null)
-            //{
-            //    exButton = notationImage.gameObject.AddComponent<ExButton>();
-            //}
-
             // 动态添加 NotationInteractionHandler
             NotationInteractionHandler interactionHandler = notationImage.gameObject.AddComponent<NotationInteractionHandler>();
             interactionHandler.notationId = notation.id; // 传递当前减字 ID
@@ -125,25 +134,13 @@ public class NotationViewManager : MonoBehaviour
             case NotationState.Selected:
                 if (id != currentHighlightedId)
                 {
-                    SetImageAlpha(image, 1f);
                     image.color = new Color(36 / 255f, 41 / 255f, 41 / 255f, 255 / 255f);
                 }
                 break;
             case NotationState.Highlighted:
-                SetImageAlpha(image, 1f);
                 image.color = new Color(176 / 255f, 80 / 255f, 55 / 255f, 255 / 255f);
                 break;
         }
-    }
-
-    /// <summary>
-    /// 设置 Image 的透明度。
-    /// </summary>
-    private void SetImageAlpha(Image image, float alpha)
-    {
-        Color color = image.color;
-        color.a = alpha;
-        image.color = color;
     }
 
     /// <summary>
@@ -151,18 +148,36 @@ public class NotationViewManager : MonoBehaviour
     /// </summary>
     public void UpdateHighlight(int newHighlightedId)
     {
-        // 取消之前的高亮
-        var preHighlightedId = currentHighlightedId;
+        var preHighlightId = currentHighlightedId;
         currentHighlightedId = newHighlightedId;
-        if (preHighlightedId != -1 && preHighlightedId != newHighlightedId)
-        {
-            SetNotationState(preHighlightedId, 
-                NotationSelectionManager.Instance.QueryNotationState(preHighlightedId) ? NotationState.Selected: NotationState.Hidden);
-        }
+        // 取消之前的高亮
+        SetNotationState(preHighlightId, 
+        (preHighlightId >= rangeStart && preHighlightId <= rangeEnd) ? NotationState.Selected: NotationState.Hidden);
 
         // 更新为新的高亮状态
         SetNotationState(currentHighlightedId, NotationState.Highlighted);
-        //Debug.Log(currentHighlightedId);
-        ScrollManager.Instance.ScrollToCenter(notationImages[currentHighlightedId].GetComponent<RectTransform>());
+
+        if (currentHighlightedId != -1)
+        {
+            ScrollManager.Instance.ScrollToCenter(notationImages[currentHighlightedId].GetComponent<RectTransform>());
+        }
+    }
+
+    /// <summary>
+    /// 更新选择状态。
+    /// </summary>
+    public void UpdateSelection(int start, int end)
+    {
+        for (int i = rangeStart; i <= rangeEnd; i++)
+        {
+            SetNotationState(i, NotationState.Hidden);
+        }
+        for (int i = start; i <= end; i++)
+        {
+            SetNotationState(i, NotationState.Selected);
+        }
+
+        rangeStart = start;
+        rangeEnd = end;
     }
 }

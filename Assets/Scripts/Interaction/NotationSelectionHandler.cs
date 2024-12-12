@@ -11,6 +11,10 @@ public class NotationSelectHandler : MonoBehaviour
 
     private int start = -1;
 
+    public event System.Action<int> OnNotationStartDragging;
+    public event System.Action<int> OnNotationSelecting;
+    public event System.Action OnNotationEndDragging; 
+
     private static NotationSelectHandler _instance;
     public static NotationSelectHandler Instance
     {
@@ -45,6 +49,8 @@ public class NotationSelectHandler : MonoBehaviour
 
     public void HandleSelect(int id)
     {
+        // ScrollManager.Instance.SetUserInteraction();
+
         if (isPressed)
         {
             // Debug.Log($"HandleSelect{id}, start{start}");
@@ -52,15 +58,19 @@ public class NotationSelectHandler : MonoBehaviour
             if (!isDragging)
             {
                 isDragging = true;
-                NotationSelectionManager.Instance.StartDragging(start);
-                ScrollManager.Instance.StartDragSelection();
+                OnNotationStartDragging?.Invoke(start);
+                //NotationSelectionManager.Instance.StartDragging(start);
+                //ScrollManager.Instance.StartDragSelection();
             }
-            NotationSelectionManager.Instance.OnNotationSelect(id);
+            //NotationSelectionManager.Instance.OnNotationSelect(id);
+            OnNotationSelecting?.Invoke(id);
         }
     }
 
     public void HandleButtonPressed(int id)
     {
+        ScrollManager.Instance.SetUserInteraction();
+
         if (!isPressed)
         {
             isPressed = true;
@@ -76,8 +86,11 @@ public class NotationSelectHandler : MonoBehaviour
             float currentTime = Time.time;
             if (currentTime - lastClickTime <= doubleClickInterval)
             {
+                // Ë«»÷²¥·Å
                 // Debug.Log("Double clicked");
-                NotationPlaybackManager.Instance.PlayAtNotation(id);
+                var notationId = DataManager.Instance.GetPositionToAudioNotation(id);
+                var notation = DataManager.Instance.GetAudioDataById(notationId[0]);
+                NotationPlaybackManager.Instance.PlayAtNotation(notation.id);
                 lastClickTime = -1f;
             }
             else
@@ -88,8 +101,9 @@ public class NotationSelectHandler : MonoBehaviour
         }
         else
         {
-            NotationSelectionManager.Instance.EndDragging();
-            ScrollManager.Instance.StopDragSelection();
+            //NotationSelectionManager.Instance.EndDragging();
+            //ScrollManager.Instance.StopDragSelection();
+            OnNotationEndDragging?.Invoke();
         }
 
         isPressed = false;

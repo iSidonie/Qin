@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class NotationPlaybackManager : MonoBehaviour
 {
+    public event System.Action<int, int> OnNotationChanged; // 通知当前减字变动
+
     private int currentIndex = -1;
     private float notationStartTime = 0;
     private float notationEndTime = 0;
     private List<NotationAudioData> notations;
-
-    private bool isABLoop = false;
-    private int loopStart = 0;
-    private int loopEnd = 0;
-    private int remainingLoops = -1; // -1 表示无限循环
-
-    public int pauseDuration = 0; // 每次循环前暂停的时间
 
     private static NotationPlaybackManager _instance;
     public static NotationPlaybackManager Instance
@@ -38,11 +33,13 @@ public class NotationPlaybackManager : MonoBehaviour
     void OnEnable()
     {
         AudioPlayer.AudioTimeUpdated += UpdateCurrentNotation;
+        ABLoopManager.Instance.OnLoopEnd += (value1, value2) => PlayAtNotation(value1);
     }
 
     void OnDisable()
     {
         AudioPlayer.AudioTimeUpdated -= UpdateCurrentNotation;
+        ABLoopManager.Instance.OnLoopEnd -= (value1, value2) => PlayAtNotation(value1);
     }
 
     void Awake()
@@ -52,7 +49,7 @@ public class NotationPlaybackManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (_instance != this)
         {
             Destroy(gameObject);
         }
@@ -85,34 +82,20 @@ public class NotationPlaybackManager : MonoBehaviour
     /// </summary>
     private void UpdateCurrentNotation(float currentTime, float totalTime)
     {
-        // Debug.Log("UpdateCurrentNotation");
         if (!isInNotationTimeRange(currentTime))
         {
-            if (++currentIndex == notations.Count)
-            {
-                currentIndex = -1;
-                StartCoroutine(PauseBeforeLoop());
-            }
+            currentIndex = ++currentIndex == notations.Count? -1: currentIndex;
 
             UpdateNotationTimeRange(totalTime);
-
-            if(currentIndex == -1)
-            {
-                return;
-            }
-
-            if (isInNotationTimeRange(currentTime))
-            {
-                NotationViewManager.Instance.UpdateHighlight(notations[currentIndex].notationIndex);
-            }
-            else
+        
+            if (currentIndex >= notations.Count || !isInNotationTimeRange(currentTime))
             {
                 currentIndex = FindNotationIndex(currentTime);
                 UpdateNotationTimeRange(totalTime);
-                NotationViewManager.Instance.UpdateHighlight(notations[currentIndex].notationIndex);
             }
+            
+            OnNotationChanged?.Invoke(currentIndex, currentIndex >= 0? notations[currentIndex].notationIndex: -1); // 触发事件
         }
-        CheckABLoop();
     }
 
     /// <summary>
@@ -125,7 +108,7 @@ public class NotationPlaybackManager : MonoBehaviour
             notationStartTime = 0.0f;
             notationEndTime = notations[0].time;
         }
-        else if(currentIndex == notations.Count - 1)
+        else if (currentIndex == notations.Count - 1)
         {
             notationStartTime = notations[currentIndex].time;
             notationEndTime = totalTime;
@@ -145,33 +128,23 @@ public class NotationPlaybackManager : MonoBehaviour
         // Debug.Log($"start {notationStartTime}, end {notationEndTime}");
         return currentTime >= notationStartTime && currentTime < notationEndTime;
     }
-
+    
     /// <summary>
-    /// 设置AB循环播放的起始点与结束点。
-    /// </summary>
-    public void SetLoopRange(int start, int end)
-    {
-        loopStart = start;
-        loopEnd = end;
-    }
-
-    /// <summary>
-    /// 跳转播放到指定减字。
+    /// 跳转播放到指定减字（id是减字id，非音频id）。
     /// </summary>
     public void PlayAtNotation(int id)
     {
-        Debug.Log("PlayAtNotation");
-        var notationId = DataManager.Instance.GetPositionToAudioNotation(id);
-        var notation = DataManager.Instance.GetAudioDataById(notationId[0]);
-        if (notation != null)
+        if (id >= 0 && id < notations.Count)
         {
+            var notation = notations[id];
             // 使用 AudioPlayer 的 SeekToTime 方法进行跳转播放
             AudioPlayer.Instance.SeekToTime(notation.time);
 
             // 更新当前索引
             currentIndex = notation.notationIndex;
+            Debug.Log($"PlayAtNotation {currentIndex}");
 
-            // NotationViewManager.Instance.UpdateHighlight(notations[currentIndex].id);
+            OnNotationChanged?.Invoke(currentIndex, notations[currentIndex].notationIndex); // 触发事件
         }
     }
 
@@ -183,6 +156,9 @@ public class NotationPlaybackManager : MonoBehaviour
         Debug.Log($"FindNotationIndex {currentIndex}");
 
         if (notations == null || notations.Count == 0) return -1;
+
+        // 首先检查时间是否小于最小值
+        if (time < notations[0].time) return -1;
 
         int left = 0;
         int right = notations.Count - 1;
@@ -207,64 +183,5 @@ public class NotationPlaybackManager : MonoBehaviour
 
         // 返回最后一个小于等于当前时间的减字索引
         return Mathf.Max(0, left - 1);
-    }
-
-    public void SetPauseDuration(int duration)
-    {
-        pauseDuration = duration;
-    }
-    
-    IEnumerator PauseBeforeLoop()
-    {
-
-        Debug.Log($"pause {pauseDuration}s...");
-        // 暂停音频
-        AudioPlayer.Instance.SetPause();
-
-        // 等待暂停时间
-        yield return new WaitForSeconds(pauseDuration);
-
-        Debug.Log("pause Ended.");
-
-        AudioPlayer.Instance.SetPlay();
-    }
-
-    private void CheckABLoopCount()
-    {
-        if (remainingLoops > 1)
-        {
-            remainingLoops--;
-            AudioUIController.Instance.SetLoopCount(remainingLoops);
-            StartCoroutine(PauseBeforeLoop());
-        }
-        else if (remainingLoops == 1)
-        {
-            remainingLoops = -1;
-            AudioUIController.Instance.SetLoopCount(remainingLoops);
-            AudioPlayer.Instance.SetPause();
-        }
-        else
-        {
-            StartCoroutine(PauseBeforeLoop());
-        }
-    }
-
-    private void CheckABLoop()
-    {
-        // 不在循环内
-        if (AudioPlayer.Instance.IsABLoop() && (currentIndex < loopStart || currentIndex > loopEnd) && loopStart != loopEnd)
-        {
-            Debug.Log($"loopStart{loopStart}, loopEnd{loopEnd}, currentIndex{currentIndex}");
-            //if(loopStart != loopEnd)
-            //{
-                PlayAtNotation(loopStart);
-                CheckABLoopCount();
-            //}
-        }
-    }
-
-    public void SetLoopCount(int count)
-    {
-        remainingLoops = count;
     }
 }

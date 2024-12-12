@@ -104,6 +104,7 @@ public class AudioUIController : MonoBehaviour
         // 订阅 AudioPlayer 的事件
         AudioPlayer.AudioTimeUpdated += UpdateTimeAndProgress;
         AudioPlayer.AudioStateChanged += UpdatePlayPauseIcon;
+        ABLoopManager.Instance.OnLoopEnd += (value1, value2) => SetLoopCount(value2);
     }
 
     private void OnDisable()
@@ -111,6 +112,7 @@ public class AudioUIController : MonoBehaviour
         // 取消订阅事件
         AudioPlayer.AudioTimeUpdated -= UpdateTimeAndProgress;
         AudioPlayer.AudioStateChanged -= UpdatePlayPauseIcon;
+        ABLoopManager.Instance.OnLoopEnd -= (value1, value2) => SetLoopCount(value2);
     }
 
     void OnDestroy()
@@ -152,8 +154,7 @@ public class AudioUIController : MonoBehaviour
         // 切换AB循环状态
         if (AudioPlayer.Instance != null)
         {
-            var isABLoop = AudioPlayer.Instance.ToggleABLoop();
-            UpdateABLoopIcon(isABLoop);
+            ABLoopManager.Instance.ToggleABLoop();
         }
     }
 
@@ -191,7 +192,6 @@ public class AudioUIController : MonoBehaviour
 
         if (AudioPlayer.Instance != null && AudioPlayer.Instance.audioSource.clip != null)
         {
-            Debug.Log("OnProgressBarChanged");
             // 根据进度条的值跳转到指定时间
             float targetTime = value * AudioPlayer.Instance.audioSource.clip.length;
             AudioPlayer.Instance.SeekToTime(targetTime);
@@ -240,7 +240,7 @@ public class AudioUIController : MonoBehaviour
     /// <summary>
     /// 更新AB循环按钮的图标。
     /// </summary>
-    private void UpdateABLoopIcon(bool isABLoop)
+    public void UpdateABLoopIcon(bool isABLoop)
     {
         Image ABLoopIcon = ABLoopButton.GetComponent<Image>();
         if (ABLoopIcon != null)
@@ -269,14 +269,14 @@ public class AudioUIController : MonoBehaviour
 
         // 根据选项设置倍速
         int duration = int.Parse(selectedDuration.Replace("s", ""));
-        NotationPlaybackManager.Instance.SetPauseDuration(duration);
+        ABLoopManager.Instance.SetPauseDuration(duration);
     }
 
     private void OnLoopCountChanged(int index)
     {
         if (index == 0)
         {
-            NotationPlaybackManager.Instance.SetLoopCount(-1);
+            ABLoopManager.Instance.SetLoopCount(0);
         }
         else
         {
@@ -284,7 +284,7 @@ public class AudioUIController : MonoBehaviour
 
             // 根据选项设置倍速
             int loopCount = int.Parse(selectedLoopCount.Replace("x", ""));
-            NotationPlaybackManager.Instance.SetLoopCount (loopCount);
+            ABLoopManager.Instance.SetLoopCount (loopCount);
         }
     }
 
