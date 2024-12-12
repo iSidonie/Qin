@@ -86,7 +86,7 @@ public class NotationViewManager : MonoBehaviour
             }
         }
 
-        ScrollManager.Instance.ScrollToCenter(notationImages[0].GetComponent<RectTransform>(), 0f);
+        ScrollToCenter(0, 0f);
     }
 
     /// <summary>
@@ -157,9 +157,14 @@ public class NotationViewManager : MonoBehaviour
         // 更新为新的高亮状态
         SetNotationState(currentHighlightedId, NotationState.Highlighted);
 
-        if (currentHighlightedId != -1)
+        ScrollToCenter(currentHighlightedId);
+    }
+
+    public void ScrollToCenter(int id, float time = 0.5f)
+    {
+        if (id >= 0 && id < notationImages.Count)
         {
-            ScrollManager.Instance.ScrollToCenter(notationImages[currentHighlightedId].GetComponent<RectTransform>());
+            ScrollManager.Instance.ScrollToCenter(notationImages[id].GetComponent<RectTransform>(), time);
         }
     }
 

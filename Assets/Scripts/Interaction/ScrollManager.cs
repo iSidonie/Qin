@@ -156,7 +156,7 @@ public class ScrollManager : MonoBehaviour
     /// <summary>
     /// »Ö¸´×Ô¶¯¹ö¶¯Âß¼­¡£
     /// </summary>
-    private void ResetUserInteraction()
+    public void ResetUserInteraction()
     {
         isUserInteracting = false;
     }

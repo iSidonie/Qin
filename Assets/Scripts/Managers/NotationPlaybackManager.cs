@@ -92,6 +92,8 @@ public class NotationPlaybackManager : MonoBehaviour
             {
                 currentIndex = FindNotationIndex(currentTime);
                 UpdateNotationTimeRange(totalTime);
+
+                //NotationViewManager.Instance.ScrollToCenter(currentIndex);
             }
             
             OnNotationChanged?.Invoke(currentIndex, currentIndex >= 0? notations[currentIndex].notationIndex: -1); // 触发事件
@@ -130,7 +132,7 @@ public class NotationPlaybackManager : MonoBehaviour
     }
     
     /// <summary>
-    /// 跳转播放到指定减字（id是减字id，非音频id）。
+    /// 跳转播放到指定减字。
     /// </summary>
     public void PlayAtNotation(int id)
     {
