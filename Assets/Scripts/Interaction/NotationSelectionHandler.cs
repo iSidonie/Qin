@@ -59,10 +59,7 @@ public class NotationSelectHandler : MonoBehaviour
             {
                 isDragging = true;
                 OnNotationStartDragging?.Invoke(start);
-                //NotationSelectionManager.Instance.StartDragging(start);
-                //ScrollManager.Instance.StartDragSelection();
             }
-            //NotationSelectionManager.Instance.OnNotationSelect(id);
             OnNotationSelecting?.Invoke(id);
         }
     }
@@ -87,10 +84,9 @@ public class NotationSelectHandler : MonoBehaviour
             if (currentTime - lastClickTime <= doubleClickInterval)
             {
                 // Ë«»÷²¥·Å
-                // Debug.Log("Double clicked");
+                // Debug.Log($"Double clicked {id}");
                 var notationId = DataManager.Instance.GetPositionToAudioNotation(id);
-                var notation = DataManager.Instance.GetAudioDataById(notationId[0]);
-                NotationPlaybackManager.Instance.PlayAtNotation(notation.id);
+                NotationPlaybackManager.Instance.PlayAtNotation(notationId[0]);
                 lastClickTime = -1f;
             }
             else
@@ -101,8 +97,6 @@ public class NotationSelectHandler : MonoBehaviour
         }
         else
         {
-            //NotationSelectionManager.Instance.EndDragging();
-            //ScrollManager.Instance.StopDragSelection();
             OnNotationEndDragging?.Invoke();
         }
 

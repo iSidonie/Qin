@@ -22,6 +22,7 @@ public class NotationPositionData
     public int x;
     public int y;
     public int id;
+    public int page;
     public string type; // "Main" or "Continuation"
     public int parentId;
 }

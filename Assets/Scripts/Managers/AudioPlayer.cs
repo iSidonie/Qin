@@ -54,13 +54,23 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    void Start()
+    private void OnEnable()
     {
-        string trackName = "QiuFengCi";
-        string performer = "GongYi";
+        // 订阅事件
+        EventManager.OnTrackSelected += LoadTrackAudio;
+    }
 
-        StartCoroutine(LoadAudioClip(trackName, performer));
-        audioSource.loop = true;
+    private void OnDisable()
+    {
+        // 取消订阅事件
+        EventManager.OnTrackSelected -= LoadTrackAudio;
+    }
+
+    private void LoadTrackAudio(TrackData trackData)
+    {
+        Debug.Log($"Loading track Aduio: {trackData.name}");
+
+        StartCoroutine(LoadAudioClip(trackData.musicFile));
     }
 
     void Update()
@@ -73,10 +83,9 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    IEnumerator LoadAudioClip(string trackName, string performer)
+    IEnumerator LoadAudioClip(string path)
     {
-        string relativePath = $"music/{trackName}_{performer}.mp3";
-        string musicPath = Path.Combine(Application.streamingAssetsPath, relativePath);
+        string musicPath = Path.Combine(Application.streamingAssetsPath, $"music/{path}");
 
         // 使用 UnityWebRequest 加载音频文件
         UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(musicPath, AudioType.MPEG);

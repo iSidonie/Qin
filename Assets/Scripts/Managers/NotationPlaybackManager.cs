@@ -34,12 +34,14 @@ public class NotationPlaybackManager : MonoBehaviour
     {
         AudioPlayer.AudioTimeUpdated += UpdateCurrentNotation;
         ABLoopManager.Instance.OnLoopEnd += (value1, value2) => PlayAtNotation(value1);
+        EventManager.OnTrackDataLoaded += LoadNotations;
     }
 
     void OnDisable()
     {
         AudioPlayer.AudioTimeUpdated -= UpdateCurrentNotation;
         ABLoopManager.Instance.OnLoopEnd -= (value1, value2) => PlayAtNotation(value1);
+        EventManager.OnTrackDataLoaded -= LoadNotations;
     }
 
     void Awake()
@@ -54,11 +56,7 @@ public class NotationPlaybackManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void Start()
-    {
-        LoadNotations();
-    }
+    
 
     /// <summary>
     /// 加载音频和减字数据。
@@ -82,7 +80,7 @@ public class NotationPlaybackManager : MonoBehaviour
     /// </summary>
     private void UpdateCurrentNotation(float currentTime, float totalTime)
     {
-        if (!isInNotationTimeRange(currentTime))
+        if (notations != null && !isInNotationTimeRange(currentTime))
         {
             currentIndex = ++currentIndex == notations.Count? -1: currentIndex;
 
@@ -92,8 +90,6 @@ public class NotationPlaybackManager : MonoBehaviour
             {
                 currentIndex = FindNotationIndex(currentTime);
                 UpdateNotationTimeRange(totalTime);
-
-                //NotationViewManager.Instance.ScrollToCenter(currentIndex);
             }
             
             OnNotationChanged?.Invoke(currentIndex, currentIndex >= 0? notations[currentIndex].notationIndex: -1); // 触发事件
@@ -143,7 +139,7 @@ public class NotationPlaybackManager : MonoBehaviour
             AudioPlayer.Instance.SeekToTime(notation.time);
 
             // 更新当前索引
-            currentIndex = notation.notationIndex;
+            currentIndex = id;
             Debug.Log($"PlayAtNotation {currentIndex}");
 
             OnNotationChanged?.Invoke(currentIndex, notations[currentIndex].notationIndex); // 触发事件

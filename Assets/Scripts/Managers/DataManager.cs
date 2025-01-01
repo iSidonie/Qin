@@ -30,10 +30,12 @@ public class DataManager : MonoBehaviour
     private Dictionary<int, NotationPositionData> positionCache = new Dictionary<int, NotationPositionData>();
     private Dictionary<int, List<int>> parentMap = new Dictionary<int, List<int>>();
     private Dictionary<int, List<int>> positionToAudioMap = new Dictionary<int, List<int>>();
-    
+
     // 存储 sections 和 pages 信息
     private List<SectionData> audioSections;
     private List<PageData> positionPages;
+
+    public string pageBaseName = "";
     
     void Awake()
     {
@@ -41,8 +43,6 @@ public class DataManager : MonoBehaviour
         {
             _instance = this;
             DontDestroyOnLoad(gameObject);
-            
-            LoadData("QiuFengCi", "GongYi");
         }
         else
         {
@@ -50,106 +50,88 @@ public class DataManager : MonoBehaviour
         }
     }
 
-
-    /// <summary>
-    /// 加载并解析 Audio.json 和 Position.json 文件。
-    /// </summary>
-    public void LoadData(string trackName, string performer)
+    private void OnEnable()
     {
-        StartCoroutine(LoadAudioData(trackName, performer));
-        StartCoroutine(LoadPositionData(trackName, performer));
-        // Debug.Log("Data loaded successfully.");
+        // 订阅事件
+        EventManager.OnTrackSelected += LoadTrackData;
+    }
+
+    private void OnDisable()
+    {
+        // 取消订阅事件
+        EventManager.OnTrackSelected -= LoadTrackData;
+    }
+
+    private void LoadTrackData(TrackData trackData)
+    {
+        pageBaseName = $"Sheets/{trackData.sheetPages.baseName}"; 
+        Debug.Log($"Loading track Json: {trackData.name}");
+        // 加载音频和谱面数据
+        StartCoroutine(LoadJsonData(trackData.positionFile, trackData.audioFile));
+    }
+
+    private IEnumerator LoadJsonData(string positionPath, string audioPath)
+    {
+        positionPath = $"json/{positionPath}";
+        audioPath = $"json/{audioPath}";
+
+        Debug.Log($"Loading track Json: {positionPath}, {audioPath}");
+
+        yield return LocalFileManager.Instance.LoadJsonAsync(positionPath, ParsePositionData);
+        yield return LocalFileManager.Instance.LoadJsonAsync(audioPath, ParseAudioData);
+
+        EventManager.OnTrackDataLoaded?.Invoke();
     }
 
     /// <summary>
     /// 加载 Audio.json 文件并解析。
     /// </summary>
-    private IEnumerator LoadAudioData(string trackName, string performer)
+    private void ParseAudioData(string json)
     {
-        string jsonFileName = $"json/{trackName}_{performer}_Audio.json";
-        string jsonPath = Path.Combine(Application.streamingAssetsPath, jsonFileName);
+        AudioDataStructure audioData = JsonUtility.FromJson<AudioDataStructure>(json);
 
-        //// 安卓需要特殊处理路径
-        //if (Application.platform == RuntimePlatform.Android)
-        //{
-        //    jsonPath = "jar:file://" + jsonPath;
-        //}
-
-        UnityWebRequest uwr = UnityWebRequest.Get(jsonPath);
-        yield return uwr.SendWebRequest();
-
-        if (uwr.result == UnityWebRequest.Result.Success)
+        // 缓存 Audio 数据
+        audioSections = audioData.sections;
+        foreach (var section in audioSections)
         {
-            string jsonContent = uwr.downloadHandler.text;
-            AudioDataStructure audioData = JsonUtility.FromJson<AudioDataStructure>(jsonContent);
-
-            // 缓存 Audio 数据
-            audioSections = audioData.sections;
-            foreach (var section in audioSections)
+            foreach (var notation in section.notations)
             {
-                foreach (var notation in section.notations)
-                {
-                    audioCache[notation.id] = notation;
+                audioCache[notation.id] = notation;
 
-                    if (!positionToAudioMap.ContainsKey(notation.notationIndex))
-                    {
-                        positionToAudioMap[notation.notationIndex] = new List<int>();
-                    }
-                    positionToAudioMap[notation.notationIndex].Add(notation.id);
+                if (!positionToAudioMap.ContainsKey(notation.notationIndex))
+                {
+                    positionToAudioMap[notation.notationIndex] = new List<int>();
                 }
+                positionToAudioMap[notation.notationIndex].Add(notation.id);
             }
-        }
-        else
-        {
-            Debug.LogError($"Audio JSON file not found: {jsonPath}");
         }
     }
 
     /// <summary>
     /// 加载 Position.json 文件并解析。
     /// </summary>
-    private IEnumerator LoadPositionData(string trackName, string performer)
+    private void ParsePositionData(string json)
     {
-        string jsonFileName = $"json/{trackName}_{performer}_Position.json";
-        string jsonPath = Path.Combine(Application.streamingAssetsPath, jsonFileName);
-
-        //// 安卓需要特殊处理路径
-        //if (Application.platform == RuntimePlatform.Android)
-        //{
-        //    jsonPath = "jar:file://" + jsonPath;
-        //}
-
-        UnityWebRequest uwr = UnityWebRequest.Get(jsonPath);
-        yield return uwr.SendWebRequest();
-
-        if (uwr.result == UnityWebRequest.Result.Success)
-        {
-            string jsonContent = uwr.downloadHandler.text;
-            PositionDataStructure positionData = JsonUtility.FromJson<PositionDataStructure>(jsonContent);
+        PositionDataStructure positionData = JsonUtility.FromJson<PositionDataStructure>(json);
             
-            // 缓存 Position 数据
-            positionPages = positionData.pages;
-            foreach (var page in positionPages)
+        // 缓存 Position 数据
+        positionPages = positionData.pages;
+        foreach (var page in positionPages)
+        {
+            foreach (var notation in page.notations)
             {
-                foreach (var notation in page.notations)
-                {
-                    positionCache[notation.id] = notation;
+                positionCache[notation.id] = notation;
 
-                    // 构建 parentMap，记录所有 Continuation Notation
-                    if (notation.type == "Continuation" && notation.parentId != -1)
+                // 构建 parentMap，记录所有 Continuation Notation
+                if (notation.type == "Continuation" && notation.parentId != -1)
+                {
+                    if (!parentMap.ContainsKey(notation.parentId))
                     {
-                        if (!parentMap.ContainsKey(notation.parentId))
-                        {
-                            parentMap[notation.parentId] = new List<int>();
-                        }
-                        parentMap[notation.parentId].Add(notation.id);
+                        parentMap[notation.parentId] = new List<int>();
                     }
+                    parentMap[notation.parentId].Add(notation.id);
                 }
             }
-        }
-        else
-        {
-            Debug.LogError($"Position JSON file not found: {jsonPath}");
         }
     }
 
@@ -194,10 +176,32 @@ public class DataManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 获取所有页面数据。
+    /// </summary>
+    public List<NotationPositionData> GetPositionByPage(int pageNumber)
+    {
+        return (pageNumber >= 0 && pageNumber < positionPages.Count)? 
+        positionPages[pageNumber].notations: new List<NotationPositionData>();
+    }
+
+    /// <summary>
+    /// 获取所有页面数据。
+    /// </summary>
+    public int GetPageByPosition(int id)
+    {
+        return positionCache[id].page;
+    }
+
+    /// <summary>
     /// 获取谱中减字在音频中对应的位置。
     /// </summary>
     public List<int> GetPositionToAudioNotation(int id)
     {
         return positionToAudioMap[id];
+    }
+
+    public string GetPageBaseName()
+    {
+        return pageBaseName;
     }
 }

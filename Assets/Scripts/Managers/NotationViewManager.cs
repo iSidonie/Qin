@@ -30,11 +30,17 @@ public class NotationViewManager : MonoBehaviour
         }
     }
 
-    public RectTransform notationContainer;
-    public Image mainNotationPrefab;
-    public Image continuationNotationPrefab;
+    // public RectTransform notationContainer;
+    private Image mainNotationPrefab;
+    private Image continuationNotationPrefab;
+
+    private GenericObjectPool<Image> mainNotationPool;
+    private GenericObjectPool<Image> continuationNotationPool;
 
     private Dictionary<int, Image> notationImages = new Dictionary<int, Image>();
+
+    private int currentPage = 0;
+
     private int currentHighlightedId = -1;
     private int rangeStart = 0;
     private int rangeEnd = -1;
@@ -60,57 +66,25 @@ public class NotationViewManager : MonoBehaviour
 
     private void OnDisable()
     {
-        NotationPlaybackManager.Instance.OnNotationChanged += (value1, value2) => UpdateHighlight(value2);
+        NotationPlaybackManager.Instance.OnNotationChanged -= (value1, value2) => UpdateHighlight(value2);
         NotationSelectionManager.SelectedChanged -= UpdateSelection;
     }
 
     void Start()
     {
-        DisplayNotations();
+        mainNotationPrefab = Resources.Load<Image>("Prefabs/MainNotationPrefab");
+        continuationNotationPrefab = Resources.Load<Image>("Prefabs/ContinuationNotationPrefab");
+
+        InitializePools();
     }
 
     /// <summary>
-    /// 显示谱面上的所有减字。
+    /// 初始化对象池。
     /// </summary>
-    private void DisplayNotations()
+    private void InitializePools()
     {
-        string trackName = "秋风词";
-        string performer = "龚一";
-        
-        var positionPages = DataManager.Instance.GetPositionPages();
-        foreach (var page in positionPages)
-        {
-            foreach (var notation in page.notations)
-            {
-                CreateNotationUI(notation);
-            }
-        }
-
-        ScrollToCenter(0, 0f);
-    }
-
-    /// <summary>
-    /// 创建单个减字 UI 元素。
-    /// </summary>
-    private void CreateNotationUI(NotationPositionData notation)
-    {
-        Image prefab = notation.type == "Main" ? mainNotationPrefab : continuationNotationPrefab;
-        Image notationImage = Instantiate(prefab, notationContainer);
-        RectTransform rectTransform = notationImage.GetComponent<RectTransform>();
-
-        rectTransform.anchoredPosition = new Vector2(notation.x * ImageResizer.Instance.GetScale(), 
-                                                  notation.y * ImageResizer.Instance.GetScale());
-        notationImages[notation.id] = notationImage;
-
-        // 初始化为隐藏状态
-        SetNotationState(notation.id, NotationState.Hidden);
-        
-        if (notation.type == "Main")
-        {
-            // 动态添加 NotationInteractionHandler
-            NotationInteractionHandler interactionHandler = notationImage.gameObject.AddComponent<NotationInteractionHandler>();
-            interactionHandler.notationId = notation.id; // 传递当前减字 ID
-        }
+        mainNotationPool = new GenericObjectPool<Image>(mainNotationPrefab, null, 50);
+        continuationNotationPool = new GenericObjectPool<Image>(continuationNotationPrefab, null, 10);
     }
 
     /// <summary>
@@ -162,8 +136,14 @@ public class NotationViewManager : MonoBehaviour
 
     public void ScrollToCenter(int id, float time = 0.5f)
     {
-        if (id >= 0 && id < notationImages.Count)
+        if (notationImages.ContainsKey(id))
         {
+            if (currentPage != DataManager.Instance.GetPageByPosition(id))
+            {
+                currentPage = DataManager.Instance.GetPageByPosition(id);
+                Debug.Log($"changePageTo{currentPage}");
+                PageManager.Instance.SlideToPage(currentPage);
+            }
             ScrollManager.Instance.ScrollToCenter(notationImages[id].GetComponent<RectTransform>(), time);
         }
     }
@@ -184,5 +164,37 @@ public class NotationViewManager : MonoBehaviour
 
         rangeStart = start;
         rangeEnd = end;
+    }
+
+    public void AddNotation(int id, Image image)
+    {
+        notationImages[id] = image;
+
+        // 初始化为隐藏状态
+        SetNotationState(id, NotationState.Hidden);
+    }
+
+    public void RemoveNotation(int id)
+    {
+        if (notationImages.ContainsKey(id))
+        {
+            notationImages.Remove(id);
+        }
+    }
+
+    public Image GetNotationImageFromPool(NotationPositionData notation)
+    {
+        // 从对象池中获取
+        return notation.type == "Main"
+            ? mainNotationPool.Get()
+            : continuationNotationPool.Get();
+    }
+
+    public void ReturnNotationImageToPool(Image image)
+    {
+        if (image.sprite == mainNotationPrefab.sprite)
+            mainNotationPool.Return(image);
+        else
+            continuationNotationPool.Return(image);
     }
 }

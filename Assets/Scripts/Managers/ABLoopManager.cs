@@ -62,16 +62,61 @@ public class ABLoopManager : MonoBehaviour
     public void SetLoopRange(int start, int end)
     {
         Debug.Log($"{start}, {end}");
-        loopStart = start;
-        loopEnd = end;
-        if (loopEnd == -1)
+        if(end == -1)
         {
+            loopStart = start;
+            loopEnd = end;
             DisableABLoop();
+            return;
+        }
+
+        // 写这么烂的代码真是对不起
+        var startList = DataManager.Instance.GetPositionToAudioNotation(start);
+        var endList = DataManager.Instance.GetPositionToAudioNotation(end);
+
+        if (startList.Count == 1)
+        {
+            loopStart = startList[0];
+            loopEnd = endList[endList.Count - 1];
         }
         else
         {
-            EnableABLoop();
+            loopStart = startList[0];
+                
+            // 找到比最小的end（endList[0]）大的最大start
+            var maxStart = 0;
+            for (int i = 0; i < startList.Count; i++)
+            {
+                // 找到第一个比endList[0]大的start作为maxStart
+                if (startList[i] > endList[0])
+                {
+                    maxStart = i;
+                    break;
+                }
+            }
+            if (maxStart == 0)
+            {
+                // 所有startList都比endList[0]小
+                loopEnd = endList[0];
+            }
+            else
+            {
+                // 倒序找到第一个比maxStart小的endList
+                for (int i = endList.Count - 1; i >= 0; i--)
+                {
+                    Debug.Log(endList[i]);
+                    if (endList[i] < startList[maxStart])
+                    {
+                        loopEnd = endList[i];
+                        break;
+                    }
+                }
+            }
         }
+
+        Debug.Log($"again{loopStart}, {loopEnd}");
+
+        EnableABLoop();
     }
 
     /// <summary>

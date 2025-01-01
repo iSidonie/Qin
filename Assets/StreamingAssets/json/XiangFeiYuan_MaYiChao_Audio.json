@@ -1,0 +1,1492 @@
+{
+  "performer": "马一超",
+  "trackName": "湘妃怨",
+  "sections": [{
+    "sectionIndex": 0,
+    "notations": [
+      {
+        "note": "一",
+        "notationIndex": 0,
+        "id": 0,
+        "time": 0.8243083953857422
+      },
+      {
+        "note": "四",
+        "notationIndex": 1,
+        "id": 1,
+        "time": 1.8227664232254028
+      },
+      {
+        "note": "二",
+        "notationIndex": 2,
+        "id": 2,
+        "time": 2.635464906692505
+      },
+      {
+        "note": "五",
+        "notationIndex": 3,
+        "id": 3,
+        "time": 3.459773302078247
+      },
+      {
+        "note": "三",
+        "notationIndex": 4,
+        "id": 4,
+        "time": 4.29569149017334
+      },
+      {
+        "note": "二",
+        "notationIndex": 5,
+        "id": 5,
+        "time": 5.119999885559082
+      },
+      {
+        "note": "五",
+        "notationIndex": 6,
+        "id": 6,
+        "time": 6.0371880531311035
+      },
+      {
+        "note": "三",
+        "notationIndex": 7,
+        "id": 7,
+        "time": 8.126984596252441
+      },
+      {
+        "note": "六",
+        "notationIndex": 8,
+        "id": 8,
+        "time": 8.951292991638184
+      },
+      {
+        "note": "四",
+        "notationIndex": 9,
+        "id": 9,
+        "time": 9.752381324768066
+      },
+      {
+        "note": "七",
+        "notationIndex": 10,
+        "id": 10,
+        "time": 10.55346965789795
+      },
+      {
+        "note": "五",
+        "notationIndex": 11,
+        "id": 11,
+        "time": 11.342947959899902
+      },
+      {
+        "note": "四",
+        "notationIndex": 12,
+        "id": 12,
+        "time": 12.132426261901855
+      },
+      {
+        "note": "七",
+        "notationIndex": 13,
+        "id": 13,
+        "time": 12.921904563903809
+      },
+      {
+        "note": "一",
+        "notationIndex": 14,
+        "id": 14,
+        "time": 15.255510330200195
+      },
+      {
+        "note": "四",
+        "notationIndex": 15,
+        "id": 15,
+        "time": 16.068208694458008
+      },
+      {
+        "note": "二",
+        "notationIndex": 16,
+        "id": 16,
+        "time": 16.8344669342041
+      },
+      {
+        "note": "五",
+        "notationIndex": 17,
+        "id": 17,
+        "time": 17.554285049438477
+      },
+      {
+        "note": "三",
+        "notationIndex": 18,
+        "id": 18,
+        "time": 18.3321533203125
+      },
+      {
+        "note": "二",
+        "notationIndex": 19,
+        "id": 19,
+        "time": 19.086803436279297
+      },
+      {
+        "note": "五",
+        "notationIndex": 20,
+        "id": 20,
+        "time": 19.806621551513672
+      },
+      {
+        "note": "三",
+        "notationIndex": 21,
+        "id": 21,
+        "time": 21.664216995239258
+      },
+      {
+        "note": "六",
+        "notationIndex": 22,
+        "id": 22,
+        "time": 22.45369529724121
+      },
+      {
+        "note": "四",
+        "notationIndex": 23,
+        "id": 23,
+        "time": 23.208345413208008
+      },
+      {
+        "note": "七",
+        "notationIndex": 24,
+        "id": 24,
+        "time": 23.951383590698242
+      },
+      {
+        "note": "五",
+        "notationIndex": 25,
+        "id": 25,
+        "time": 24.717641830444336
+      },
+      {
+        "note": "四",
+        "notationIndex": 26,
+        "id": 26,
+        "time": 25.46068000793457
+      },
+      {
+        "note": "七",
+        "notationIndex": 27,
+        "id": 27,
+        "time": 26.226938247680664
+      },
+      {
+        "note": "四",
+        "notationIndex": 28,
+        "id": 28,
+        "time": 28.212244033813477
+      },
+      {
+        "note": "五",
+        "notationIndex": 29,
+        "id": 29,
+        "time": 29.431291580200195
+      },
+      {
+        "note": "六",
+        "notationIndex": 30,
+        "id": 30,
+        "time": 29.826032638549805
+      },
+      {
+        "note": "七",
+        "notationIndex": 31,
+        "id": 31,
+        "time": 30.53424072265625
+      },
+      {
+        "note": "五",
+        "notationIndex": 32,
+        "id": 32,
+        "time": 31.265668869018555
+      },
+      {
+        "note": "四",
+        "notationIndex": 33,
+        "id": 33,
+        "time": 32.00870895385742
+      },
+      {
+        "note": "七",
+        "notationIndex": 34,
+        "id": 34,
+        "time": 32.740135192871094
+      },
+      {
+        "note": "三",
+        "notationIndex": 35,
+        "id": 35,
+        "time": 34.73705291748047
+      },
+      {
+        "note": "四",
+        "notationIndex": 36,
+        "id": 36,
+        "time": 35.921268463134766
+      },
+      {
+        "note": "五",
+        "notationIndex": 37,
+        "id": 37,
+        "time": 36.316009521484375
+      },
+      {
+        "note": "六",
+        "notationIndex": 38,
+        "id": 38,
+        "time": 37.08226776123047
+      },
+      {
+        "note": "四",
+        "notationIndex": 39,
+        "id": 39,
+        "time": 37.98784637451172
+      },
+      {
+        "note": "三",
+        "notationIndex": 40,
+        "id": 40,
+        "time": 38.986305236816406
+      },
+      {
+        "note": "六",
+        "notationIndex": 41,
+        "id": 41,
+        "time": 40.077640533447266
+      },
+      {
+        "note": "七",
+        "notationIndex": 42,
+        "id": 42,
+        "time": 43.02657699584961
+      },
+      {
+        "note": "六",
+        "notationIndex": 43,
+        "id": 43,
+        "time": 43.769615173339844
+      },
+      {
+        "note": "上七九",
+        "notationIndex": 44,
+        "id": 44,
+        "time": 44.14113235473633
+      },
+      {
+        "note": "剔六",
+        "notationIndex": 45,
+        "id": 45,
+        "time": 44.4313850402832
+      },
+      {
+        "note": "下九",
+        "notationIndex": 46,
+        "id": 46,
+        "time": 44.76807403564453
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 47,
+        "id": 47,
+        "time": 45.116371154785156
+      },
+      {
+        "note": "上九",
+        "notationIndex": 48,
+        "id": 48,
+        "time": 45.453060150146484
+      },
+      {
+        "note": "七",
+        "notationIndex": 49,
+        "id": 49,
+        "time": 45.81296920776367
+      },
+      {
+        "note": "五",
+        "notationIndex": 50,
+        "id": 50,
+        "time": 46.54439926147461
+      },
+      {
+        "note": "七",
+        "notationIndex": 51,
+        "id": 51,
+        "time": 47.299049377441406
+      },
+      {
+        "note": "六",
+        "notationIndex": 52,
+        "id": 52,
+        "time": 48.98249435424805
+      },
+      {
+        "note": "五",
+        "notationIndex": 53,
+        "id": 53,
+        "time": 49.644264221191406
+      },
+      {
+        "note": "上七六",
+        "notationIndex": 54,
+        "id": 54,
+        "time": 50.05061340332031
+      },
+      {
+        "note": "剔五",
+        "notationIndex": 55,
+        "id": 55,
+        "time": 50.35247039794922
+      },
+      {
+        "note": "下九",
+        "notationIndex": 56,
+        "id": 56,
+        "time": 50.68915939331055
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 57,
+        "id": 57,
+        "time": 51.049068450927734
+      },
+      {
+        "note": "上九",
+        "notationIndex": 58,
+        "id": 58,
+        "time": 51.36254119873047
+      },
+      {
+        "note": "六",
+        "notationIndex": 59,
+        "id": 59,
+        "time": 51.75727844238281
+      },
+      {
+        "note": "四",
+        "notationIndex": 60,
+        "id": 60,
+        "time": 52.51192855834961
+      },
+      {
+        "note": "六",
+        "notationIndex": 61,
+        "id": 61,
+        "time": 53.22013473510742
+      },
+      {
+        "note": "四",
+        "notationIndex": 62,
+        "id": 62,
+        "time": 54.81070327758789
+      },
+      {
+        "note": "五",
+        "notationIndex": 63,
+        "id": 63,
+        "time": 56.29677963256836
+      },
+      {
+        "note": "抹六",
+        "notationIndex": 64,
+        "id": 64,
+        "time": 57.71319580078125
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 64,
+        "id": 65,
+        "time": 58.456233978271484
+      },
+      {
+        "note": "四",
+        "notationIndex": 65,
+        "id": 66,
+        "time": 59.199275970458984
+      },
+      {
+        "note": "抹七",
+        "notationIndex": 66,
+        "id": 67,
+        "time": 60.70857238769531
+      },
+      {
+        "note": "上七六",
+        "notationIndex": 67,
+        "id": 68,
+        "time": 61.50965881347656
+      },
+      {
+        "note": "挑七",
+        "notationIndex": 68,
+        "id": 69,
+        "time": 62.17142868041992
+      },
+      {
+        "note": "下九",
+        "notationIndex": 69,
+        "id": 70,
+        "time": 62.82158660888672
+      },
+      {
+        "note": "勾六",
+        "notationIndex": 70,
+        "id": 71,
+        "time": 62.84480667114258
+      },
+      {
+        "note": "上七九",
+        "notationIndex": 71,
+        "id": 72,
+        "time": 63.19310760498047
+      },
+      {
+        "note": "剔六",
+        "notationIndex": 72,
+        "id": 73,
+        "time": 63.518184661865234
+      },
+      {
+        "note": "下九",
+        "notationIndex": 73,
+        "id": 74,
+        "time": 63.808433532714844
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 74,
+        "id": 75,
+        "time": 64.16834259033203
+      },
+      {
+        "note": "上九",
+        "notationIndex": 75,
+        "id": 76,
+        "time": 64.4818115234375
+      },
+      {
+        "note": "七",
+        "notationIndex": 76,
+        "id": 77,
+        "time": 64.86494445800781
+      },
+      {
+        "note": "五",
+        "notationIndex": 77,
+        "id": 78,
+        "time": 65.57315063476562
+      },
+      {
+        "note": "七",
+        "notationIndex": 78,
+        "id": 79,
+        "time": 66.24652862548828
+      },
+      {
+        "note": "七",
+        "notationIndex": 79,
+        "id": 80,
+        "time": 67.6977767944336
+      },
+      {
+        "note": "六",
+        "notationIndex": 80,
+        "id": 81,
+        "time": 68.7194595336914
+      },
+      {
+        "note": "五",
+        "notationIndex": 81,
+        "id": 82,
+        "time": 69.09097290039062
+      },
+      {
+        "note": "四",
+        "notationIndex": 82,
+        "id": 83,
+        "time": 69.76435089111328
+      },
+      {
+        "note": "六",
+        "notationIndex": 83,
+        "id": 84,
+        "time": 70.47256469726562
+      },
+      {
+        "note": "五",
+        "notationIndex": 84,
+        "id": 85,
+        "time": 73.11963653564453
+      },
+      {
+        "note": "四",
+        "notationIndex": 85,
+        "id": 86,
+        "time": 74.15292358398438
+      },
+      {
+        "note": "三",
+        "notationIndex": 86,
+        "id": 87,
+        "time": 74.48961639404297
+      },
+      {
+        "note": "二",
+        "notationIndex": 87,
+        "id": 88,
+        "time": 75.18621063232422
+      },
+      {
+        "note": "四",
+        "notationIndex": 88,
+        "id": 89,
+        "time": 75.87120056152344
+      },
+      {
+        "note": "泛起七",
+        "notationIndex": 89,
+        "id": 90,
+        "time": 78.62276458740234
+      },
+      {
+        "note": "六",
+        "notationIndex": 90,
+        "id": 91,
+        "time": 79.64444732666016
+      },
+      {
+        "note": "五",
+        "notationIndex": 91,
+        "id": 92,
+        "time": 79.96952056884766
+      },
+      {
+        "note": "三",
+        "notationIndex": 92,
+        "id": 93,
+        "time": 80.60807037353516
+      },
+      {
+        "note": "六",
+        "notationIndex": 93,
+        "id": 94,
+        "time": 81.25823211669922
+      },
+      {
+        "note": "五",
+        "notationIndex": 94,
+        "id": 95,
+        "time": 82.74430847167969
+      },
+      {
+        "note": "四",
+        "notationIndex": 95,
+        "id": 96,
+        "time": 83.77759552001953
+      },
+      {
+        "note": "三",
+        "notationIndex": 96,
+        "id": 97,
+        "time": 84.12589263916016
+      },
+      {
+        "note": "一",
+        "notationIndex": 97,
+        "id": 98,
+        "time": 84.79927062988281
+      },
+      {
+        "note": "四泛止",
+        "notationIndex": 98,
+        "id": 99,
+        "time": 85.44943237304688
+      },
+      {
+        "note": "七",
+        "notationIndex": 99,
+        "id": 100,
+        "time": 86.88906860351562
+      },
+      {
+        "note": "六",
+        "notationIndex": 100,
+        "id": 101,
+        "time": 87.50440216064453
+      },
+      {
+        "note": "上七九",
+        "notationIndex": 101,
+        "id": 102,
+        "time": 87.8410873413086
+      },
+      {
+        "note": "剔六",
+        "notationIndex": 102,
+        "id": 103,
+        "time": 88.1429443359375
+      },
+      {
+        "note": "下九",
+        "notationIndex": 103,
+        "id": 104,
+        "time": 88.44480895996094
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 104,
+        "id": 105,
+        "time": 88.76988983154297
+      },
+      {
+        "note": "上九",
+        "notationIndex": 105,
+        "id": 106,
+        "time": 89.08335876464844
+      },
+      {
+        "note": "七",
+        "notationIndex": 106,
+        "id": 107,
+        "time": 89.4200439453125
+      },
+      {
+        "note": "五",
+        "notationIndex": 107,
+        "id": 108,
+        "time": 90.09342193603516
+      },
+      {
+        "note": "七",
+        "notationIndex": 108,
+        "id": 109,
+        "time": 90.76679992675781
+      },
+      {
+        "note": "六",
+        "notationIndex": 109,
+        "id": 110,
+        "time": 92.20643615722656
+      },
+      {
+        "note": "五",
+        "notationIndex": 110,
+        "id": 111,
+        "time": 92.84498596191406
+      },
+      {
+        "note": "上七六",
+        "notationIndex": 111,
+        "id": 112,
+        "time": 93.19329071044922
+      },
+      {
+        "note": "剔五",
+        "notationIndex": 112,
+        "id": 113,
+        "time": 93.50675964355469
+      },
+      {
+        "note": "下九",
+        "notationIndex": 113,
+        "id": 114,
+        "time": 93.77378845214844
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 114,
+        "id": 115,
+        "time": 94.14530944824219
+      },
+      {
+        "note": "上九",
+        "notationIndex": 115,
+        "id": 116,
+        "time": 94.43555450439453
+      },
+      {
+        "note": "六",
+        "notationIndex": 116,
+        "id": 117,
+        "time": 94.78385162353516
+      },
+      {
+        "note": "四",
+        "notationIndex": 117,
+        "id": 118,
+        "time": 95.50366973876953
+      },
+      {
+        "note": "六",
+        "notationIndex": 118,
+        "id": 119,
+        "time": 96.1538314819336
+      },
+      {
+        "note": "四",
+        "notationIndex": 119,
+        "id": 120,
+        "time": 96.85043334960938
+      },
+      {
+        "note": "五",
+        "notationIndex": 120,
+        "id": 121,
+        "time": 97.18711853027344
+      },
+      {
+        "note": "六",
+        "notationIndex": 121,
+        "id": 122,
+        "time": 97.52381134033203
+      },
+      {
+        "note": "四",
+        "notationIndex": 122,
+        "id": 123,
+        "time": 98.18557739257812
+      },
+      {
+        "note": "六",
+        "notationIndex": 123,
+        "id": 124,
+        "time": 98.84734344482422
+      },
+      {
+        "note": "五",
+        "notationIndex": 124,
+        "id": 125,
+        "time": 99.5439453125
+      },
+      {
+        "note": "六",
+        "notationIndex": 125,
+        "id": 126,
+        "time": 99.86902618408203
+      },
+      {
+        "note": "七",
+        "notationIndex": 126,
+        "id": 127,
+        "time": 100.21732330322266
+      },
+      {
+        "note": "五",
+        "notationIndex": 127,
+        "id": 128,
+        "time": 100.85587310791016
+      },
+      {
+        "note": "七",
+        "notationIndex": 128,
+        "id": 129,
+        "time": 101.54086303710938
+      },
+      {
+        "note": "二",
+        "notationIndex": 129,
+        "id": 130,
+        "time": 103.07337951660156
+      },
+      {
+        "note": "三",
+        "notationIndex": 130,
+        "id": 131,
+        "time": 104.234375
+      },
+      {
+        "note": "四",
+        "notationIndex": 131,
+        "id": 132,
+        "time": 104.68716430664062
+      },
+      {
+        "note": "二",
+        "notationIndex": 132,
+        "id": 133,
+        "time": 105.58113098144531
+      },
+      {
+        "note": "四",
+        "notationIndex": 133,
+        "id": 134,
+        "time": 106.5563735961914
+      },
+      {
+        "note": "七",
+        "notationIndex": 134,
+        "id": 135,
+        "time": 109.51691436767578
+      },
+      {
+        "note": "六",
+        "notationIndex": 135,
+        "id": 136,
+        "time": 110.12063598632812
+      },
+      {
+        "note": "上七九",
+        "notationIndex": 136,
+        "id": 137,
+        "time": 110.44571685791016
+      },
+      {
+        "note": "剔六",
+        "notationIndex": 137,
+        "id": 138,
+        "time": 110.75918579101562
+      },
+      {
+        "note": "下九",
+        "notationIndex": 138,
+        "id": 139,
+        "time": 111.03782653808594
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 139,
+        "id": 140,
+        "time": 111.37451171875
+      },
+      {
+        "note": "上九",
+        "notationIndex": 140,
+        "id": 141,
+        "time": 111.6763687133789
+      },
+      {
+        "note": "七",
+        "notationIndex": 141,
+        "id": 142,
+        "time": 112.07111358642578
+      },
+      {
+        "note": "五",
+        "notationIndex": 142,
+        "id": 143,
+        "time": 112.74449157714844
+      },
+      {
+        "note": "七",
+        "notationIndex": 143,
+        "id": 144,
+        "time": 113.37142944335938
+      },
+      {
+        "note": "泛起三",
+        "notationIndex": 144,
+        "id": 145,
+        "time": 114.70657348632812
+      },
+      {
+        "note": "六",
+        "notationIndex": 145,
+        "id": 146,
+        "time": 115.32190704345703
+      },
+      {
+        "note": "四",
+        "notationIndex": 146,
+        "id": 147,
+        "time": 116.00689697265625
+      },
+      {
+        "note": "三",
+        "notationIndex": 147,
+        "id": 148,
+        "time": 116.63383483886719
+      },
+      {
+        "note": "六",
+        "notationIndex": 148,
+        "id": 149,
+        "time": 117.24916076660156
+      },
+      {
+        "note": "四",
+        "notationIndex": 149,
+        "id": 150,
+        "time": 118.53787231445312
+      },
+      {
+        "note": "七",
+        "notationIndex": 150,
+        "id": 151,
+        "time": 119.1764144897461
+      },
+      {
+        "note": "五",
+        "notationIndex": 151,
+        "id": 152,
+        "time": 119.82657623291016
+      },
+      {
+        "note": "四",
+        "notationIndex": 152,
+        "id": 153,
+        "time": 120.46512603759766
+      },
+      {
+        "note": "七",
+        "notationIndex": 153,
+        "id": 154,
+        "time": 121.0920639038086
+      },
+      {
+        "note": "七",
+        "notationIndex": 154,
+        "id": 155,
+        "time": 122.52008819580078
+      },
+      {
+        "note": "六",
+        "notationIndex": 155,
+        "id": 156,
+        "time": 123.5417709350586
+      },
+      {
+        "note": "五",
+        "notationIndex": 156,
+        "id": 157,
+        "time": 123.86685180664062
+      },
+      {
+        "note": "四",
+        "notationIndex": 157,
+        "id": 158,
+        "time": 124.49378967285156
+      },
+      {
+        "note": "七",
+        "notationIndex": 158,
+        "id": 159,
+        "time": 125.15555572509766
+      },
+      {
+        "note": "六",
+        "notationIndex": 159,
+        "id": 160,
+        "time": 126.53713989257812
+      },
+      {
+        "note": "五",
+        "notationIndex": 160,
+        "id": 161,
+        "time": 127.55882263183594
+      },
+      {
+        "note": "四",
+        "notationIndex": 161,
+        "id": 162,
+        "time": 127.91873168945312
+      },
+      {
+        "note": "三",
+        "notationIndex": 162,
+        "id": 163,
+        "time": 128.5688934326172
+      },
+      {
+        "note": "六泛止",
+        "notationIndex": 163,
+        "id": 164,
+        "time": 129.23065185546875
+      },
+      {
+        "note": "四",
+        "notationIndex": 164,
+        "id": 165,
+        "time": 129.90403747558594
+      },
+      {
+        "note": "五",
+        "notationIndex": 165,
+        "id": 166,
+        "time": 130.20590209960938
+      },
+      {
+        "note": "六",
+        "notationIndex": 166,
+        "id": 167,
+        "time": 130.6006317138672
+      },
+      {
+        "note": "四",
+        "notationIndex": 167,
+        "id": 168,
+        "time": 131.1927490234375
+      },
+      {
+        "note": "六",
+        "notationIndex": 168,
+        "id": 169,
+        "time": 131.85450744628906
+      },
+      {
+        "note": "五",
+        "notationIndex": 169,
+        "id": 170,
+        "time": 132.50466918945312
+      },
+      {
+        "note": "六",
+        "notationIndex": 170,
+        "id": 171,
+        "time": 132.80653381347656
+      },
+      {
+        "note": "七",
+        "notationIndex": 171,
+        "id": 172,
+        "time": 133.1548309326172
+      },
+      {
+        "note": "五",
+        "notationIndex": 172,
+        "id": 173,
+        "time": 133.78176879882812
+      },
+      {
+        "note": "七",
+        "notationIndex": 173,
+        "id": 174,
+        "time": 134.40870666503906
+      },
+      {
+        "note": "四",
+        "notationIndex": 174,
+        "id": 175,
+        "time": 135.05886840820312
+      },
+      {
+        "note": "五",
+        "notationIndex": 175,
+        "id": 176,
+        "time": 135.36073303222656
+      },
+      {
+        "note": "六",
+        "notationIndex": 176,
+        "id": 177,
+        "time": 135.69741821289062
+      },
+      {
+        "note": "四",
+        "notationIndex": 177,
+        "id": 178,
+        "time": 136.32435607910156
+      },
+      {
+        "note": "六",
+        "notationIndex": 178,
+        "id": 179,
+        "time": 136.96290588378906
+      },
+      {
+        "note": "五",
+        "notationIndex": 179,
+        "id": 180,
+        "time": 137.60145568847656
+      },
+      {
+        "note": "六",
+        "notationIndex": 180,
+        "id": 181,
+        "time": 137.90330505371094
+      },
+      {
+        "note": "七",
+        "notationIndex": 181,
+        "id": 182,
+        "time": 138.24000549316406
+      },
+      {
+        "note": "五",
+        "notationIndex": 182,
+        "id": 183,
+        "time": 138.89015197753906
+      },
+      {
+        "note": "七",
+        "notationIndex": 183,
+        "id": 184,
+        "time": 139.56353759765625
+      },
+      {
+        "note": "七",
+        "notationIndex": 184,
+        "id": 185,
+        "time": 140.9567413330078
+      },
+      {
+        "note": "六",
+        "notationIndex": 185,
+        "id": 186,
+        "time": 141.56045532226562
+      },
+      {
+        "note": "上七九",
+        "notationIndex": 186,
+        "id": 187,
+        "time": 141.90875244140625
+      },
+      {
+        "note": "剔六",
+        "notationIndex": 187,
+        "id": 188,
+        "time": 142.18739318847656
+      },
+      {
+        "note": "下九",
+        "notationIndex": 188,
+        "id": 189,
+        "time": 142.5008544921875
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 189,
+        "id": 190,
+        "time": 142.79110717773438
+      },
+      {
+        "note": "上九",
+        "notationIndex": 190,
+        "id": 191,
+        "time": 143.10458374023438
+      },
+      {
+        "note": "七",
+        "notationIndex": 191,
+        "id": 192,
+        "time": 143.452880859375
+      },
+      {
+        "note": "五",
+        "notationIndex": 192,
+        "id": 193,
+        "time": 144.10304260253906
+      },
+      {
+        "note": "七",
+        "notationIndex": 193,
+        "id": 194,
+        "time": 144.76480102539062
+      },
+      {
+        "note": "六",
+        "notationIndex": 194,
+        "id": 195,
+        "time": 146.1231689453125
+      },
+      {
+        "note": "五",
+        "notationIndex": 195,
+        "id": 196,
+        "time": 146.78494262695312
+      },
+      {
+        "note": "上七六",
+        "notationIndex": 196,
+        "id": 197,
+        "time": 147.1796875
+      },
+      {
+        "note": "剔五",
+        "notationIndex": 197,
+        "id": 198,
+        "time": 147.4699249267578
+      },
+      {
+        "note": "下九",
+        "notationIndex": 198,
+        "id": 199,
+        "time": 147.7601776123047
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 199,
+        "id": 200,
+        "time": 148.12008666992188
+      },
+      {
+        "note": "上九",
+        "notationIndex": 200,
+        "id": 201,
+        "time": 148.43356323242188
+      },
+      {
+        "note": "六",
+        "notationIndex": 201,
+        "id": 202,
+        "time": 148.79347229003906
+      },
+      {
+        "note": "四",
+        "notationIndex": 202,
+        "id": 203,
+        "time": 149.50167846679688
+      },
+      {
+        "note": "六",
+        "notationIndex": 203,
+        "id": 204,
+        "time": 150.19827270507812
+      },
+      {
+        "note": "四",
+        "notationIndex": 204,
+        "id": 205,
+        "time": 150.89488220214844
+      },
+      {
+        "note": "五",
+        "notationIndex": 205,
+        "id": 206,
+        "time": 151.21995544433594
+      },
+      {
+        "note": "六",
+        "notationIndex": 206,
+        "id": 207,
+        "time": 151.556640625
+      },
+      {
+        "note": "五",
+        "notationIndex": 207,
+        "id": 208,
+        "time": 152.20680236816406
+      },
+      {
+        "note": "七",
+        "notationIndex": 208,
+        "id": 209,
+        "time": 152.88018798828125
+      },
+      {
+        "note": "六",
+        "notationIndex": 209,
+        "id": 210,
+        "time": 153.66966247558594
+      },
+      {
+        "note": "四",
+        "notationIndex": 210,
+        "id": 211,
+        "time": 154.45913696289062
+      },
+      {
+        "note": "四",
+        "notationIndex": 211,
+        "id": 212,
+        "time": 156.65342712402344
+      },
+      {
+        "note": "五",
+        "notationIndex": 212,
+        "id": 213,
+        "time": 157.03656005859375
+      },
+      {
+        "note": "小撮",
+        "notationIndex": 213,
+        "id": 214,
+        "time": 157.44290161132812
+      },
+      {
+        "note": "上九",
+        "notationIndex": 214,
+        "id": 215,
+        "time": 158.66195678710938
+      },
+      {
+        "note": "四",
+        "notationIndex": 215,
+        "id": 216,
+        "time": 162.19137573242188
+      },
+      {
+        "note": "五",
+        "notationIndex": 216,
+        "id": 217,
+        "time": 163.9212646484375
+      },
+      {
+        "note": "小撮",
+        "notationIndex": 217,
+        "id": 218,
+        "time": 166.17359924316406
+      },
+      {
+        "note": "泛起一",
+        "notationIndex": 218,
+        "id": 219,
+        "time": 170.29515075683594
+      },
+      {
+        "note": "四",
+        "notationIndex": 219,
+        "id": 220,
+        "time": 170.98013305664062
+      },
+      {
+        "note": "二",
+        "notationIndex": 220,
+        "id": 221,
+        "time": 171.66513061523438
+      },
+      {
+        "note": "五",
+        "notationIndex": 221,
+        "id": 222,
+        "time": 172.2688446044922
+      },
+      {
+        "note": "三",
+        "notationIndex": 222,
+        "id": 223,
+        "time": 172.9422149658203
+      },
+      {
+        "note": "二",
+        "notationIndex": 223,
+        "id": 224,
+        "time": 173.62721252441406
+      },
+      {
+        "note": "五",
+        "notationIndex": 224,
+        "id": 225,
+        "time": 174.2889862060547
+      },
+      {
+        "note": "三",
+        "notationIndex": 225,
+        "id": 226,
+        "time": 175.83309936523438
+      },
+      {
+        "note": "六",
+        "notationIndex": 226,
+        "id": 227,
+        "time": 176.494873046875
+      },
+      {
+        "note": "四",
+        "notationIndex": 227,
+        "id": 228,
+        "time": 177.2030792236328
+      },
+      {
+        "note": "七",
+        "notationIndex": 228,
+        "id": 229,
+        "time": 177.87646484375
+      },
+      {
+        "note": "五",
+        "notationIndex": 229,
+        "id": 230,
+        "time": 178.54983520507812
+      },
+      {
+        "note": "四",
+        "notationIndex": 230,
+        "id": 231,
+        "time": 179.1999969482422
+      },
+      {
+        "note": "七",
+        "notationIndex": 231,
+        "id": 232,
+        "time": 179.8617706298828
+      },
+      {
+        "note": "四",
+        "notationIndex": 232,
+        "id": 233,
+        "time": 181.45233154296875
+      },
+      {
+        "note": "五",
+        "notationIndex": 233,
+        "id": 234,
+        "time": 182.48562622070312
+      },
+      {
+        "note": "六",
+        "notationIndex": 234,
+        "id": 235,
+        "time": 182.83392333984375
+      },
+      {
+        "note": "七",
+        "notationIndex": 235,
+        "id": 236,
+        "time": 183.49569702148438
+      },
+      {
+        "note": "五",
+        "notationIndex": 236,
+        "id": 237,
+        "time": 184.1690673828125
+      },
+      {
+        "note": "四",
+        "notationIndex": 237,
+        "id": 238,
+        "time": 184.88888549804688
+      },
+      {
+        "note": "七",
+        "notationIndex": 238,
+        "id": 239,
+        "time": 185.6203155517578
+      },
+      {
+        "note": "四",
+        "notationIndex": 239,
+        "id": 240,
+        "time": 187.28054809570312
+      },
+      {
+        "note": "五",
+        "notationIndex": 240,
+        "id": 241,
+        "time": 188.65052795410156
+      },
+      {
+        "note": "七",
+        "notationIndex": 241,
+        "id": 242,
+        "time": 190.00889587402344
+      },
+      {
+        "note": "六",
+        "notationIndex": 242,
+        "id": 243,
+        "time": 190.26431274414062
+      },
+      {
+        "note": "一",
+        "notationIndex": 243,
+        "id": 244,
+        "time": 190.96090698242188
+      },
+      {
+        "note": "六",
+        "notationIndex": 244,
+        "id": 245,
+        "time": 191.9129180908203
+      },
+      {
+        "note": "大撮",
+        "notationIndex": 245,
+        "id": 246,
+        "time": 195.97640991210938
+      }
+    ],
+    "title": ""
+  }]
+}
