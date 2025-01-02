@@ -1,0 +1,1252 @@
+{
+  "performer": "龚一",
+  "trackName": "良宵引",
+  "sections": [{
+    "sectionIndex": 0,
+    "notations": [
+      {
+        "note": "勾一",
+        "notationIndex": 0,
+        "id": 0,
+        "time": 0.7662584781646729
+      },
+      {
+        "note": "勾二",
+        "notationIndex": 1,
+        "id": 1,
+        "time": 2.948934316635132
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 2,
+        "id": 2,
+        "time": 3.529433012008667
+      },
+      {
+        "note": "托七",
+        "notationIndex": 3,
+        "id": 3,
+        "time": 5.596009254455566
+      },
+      {
+        "note": "长吟",
+        "notationIndex": 4,
+        "id": 4,
+        "time": 7.233016014099121
+      },
+      {
+        "note": "抓起",
+        "notationIndex": 5,
+        "id": 5,
+        "time": 8.243083953857422
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 6,
+        "id": 6,
+        "time": 9.125442504882812
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 7,
+        "id": 7,
+        "time": 11.517097473144531
+      },
+      {
+        "note": "挑四",
+        "notationIndex": 7,
+        "id": 8,
+        "time": 11.84217643737793
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 8,
+        "id": 9,
+        "time": 12.213696479797363
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 9,
+        "id": 10,
+        "time": 13.815873146057129
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 10,
+        "id": 11,
+        "time": 15.418049812316895
+      },
+      {
+        "note": "托七",
+        "notationIndex": 11,
+        "id": 12,
+        "time": 17.275646209716797
+      },
+      {
+        "note": "背锁",
+        "notationIndex": 12,
+        "id": 13,
+        "time": 20.41033935546875
+      },
+      {
+        "note": "背锁",
+        "notationIndex": 12,
+        "id": 14,
+        "time": 20.491609573364258
+      },
+      {
+        "note": "背锁",
+        "notationIndex": 12,
+        "id": 15,
+        "time": 20.619319915771484
+      },
+      {
+        "note": "进",
+        "notationIndex": 13,
+        "id": 16,
+        "time": 22.151836395263672
+      },
+      {
+        "note": "复",
+        "notationIndex": 14,
+        "id": 17,
+        "time": 22.918094635009766
+      },
+      {
+        "note": "抹七",
+        "notationIndex": 15,
+        "id": 18,
+        "time": 23.730792999267578
+      },
+      {
+        "note": "吟",
+        "notationIndex": 16,
+        "id": 19,
+        "time": 24.03265380859375
+      },
+      {
+        "note": "上六二",
+        "notationIndex": 17,
+        "id": 20,
+        "time": 25.356189727783203
+      },
+      {
+        "note": "就挑七",
+        "notationIndex": 18,
+        "id": 21,
+        "time": 26.911928176879883
+      },
+      {
+        "note": "下七",
+        "notationIndex": 19,
+        "id": 22,
+        "time": 27.666576385498047
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 20,
+        "id": 23,
+        "time": 29.164262771606445
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 21,
+        "id": 24,
+        "time": 30.000181198120117
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 22,
+        "id": 25,
+        "time": 31.625577926635742
+      },
+      {
+        "note": "轮七",
+        "notationIndex": 23,
+        "id": 26,
+        "time": 34.5396842956543
+      },
+      {
+        "note": "轮七",
+        "notationIndex": 23,
+        "id": 27,
+        "time": 34.63256072998047
+      },
+      {
+        "note": "轮七",
+        "notationIndex": 23,
+        "id": 28,
+        "time": 34.73705291748047
+      },
+      {
+        "note": "软进",
+        "notationIndex": 24,
+        "id": 29,
+        "time": 36.002540588378906
+      },
+      {
+        "note": "复",
+        "notationIndex": 25,
+        "id": 30,
+        "time": 36.629478454589844
+      },
+      {
+        "note": "抹七",
+        "notationIndex": 26,
+        "id": 31,
+        "time": 37.36090850830078
+      },
+      {
+        "note": "吟",
+        "notationIndex": 27,
+        "id": 32,
+        "time": 38.01106643676758
+      },
+      {
+        "note": "上六二",
+        "notationIndex": 28,
+        "id": 33,
+        "time": 38.707664489746094
+      },
+      {
+        "note": "撞",
+        "notationIndex": 29,
+        "id": 34,
+        "time": 39.276554107666016
+      },
+      {
+        "note": "挑七",
+        "notationIndex": 30,
+        "id": 35,
+        "time": 39.96154022216797
+      },
+      {
+        "note": "撞",
+        "notationIndex": 31,
+        "id": 36,
+        "time": 41.052879333496094
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 32,
+        "id": 37,
+        "time": 42.00489807128906
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 33,
+        "id": 38,
+        "time": 42.67827606201172
+      },
+      {
+        "note": "吟",
+        "notationIndex": 34,
+        "id": 39,
+        "time": 43.374874114990234
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 35,
+        "id": 40,
+        "time": 44.14113235473633
+      },
+      {
+        "note": "勾五",
+        "notationIndex": 36,
+        "id": 41,
+        "time": 46.602447509765625
+      },
+      {
+        "note": "吟",
+        "notationIndex": 37,
+        "id": 42,
+        "time": 47.93759536743164
+      },
+      {
+        "note": "勾六",
+        "notationIndex": 38,
+        "id": 43,
+        "time": 49.1334228515625
+      },
+      {
+        "note": "进",
+        "notationIndex": 39,
+        "id": 44,
+        "time": 50.48018264770508
+      },
+      {
+        "note": "复",
+        "notationIndex": 40,
+        "id": 45,
+        "time": 51.03746032714844
+      },
+      {
+        "note": "挑七",
+        "notationIndex": 41,
+        "id": 46,
+        "time": 51.687618255615234
+      },
+      {
+        "note": "上六二",
+        "notationIndex": 42,
+        "id": 47,
+        "time": 53.05759811401367
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 43,
+        "id": 48,
+        "time": 54.26503372192383
+      },
+      {
+        "note": "略吟",
+        "notationIndex": 44,
+        "id": 49,
+        "time": 54.868751525878906
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 45,
+        "id": 50,
+        "time": 56.00653076171875
+      },
+      {
+        "note": "挑四",
+        "notationIndex": 46,
+        "id": 51,
+        "time": 56.59864044189453
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 47,
+        "id": 52,
+        "time": 59.16444396972656
+      },
+      {
+        "note": "略吟",
+        "notationIndex": 48,
+        "id": 53,
+        "time": 59.76816177368164
+      },
+      {
+        "note": "掩三",
+        "notationIndex": 49,
+        "id": 54,
+        "time": 61.04526138305664
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 50,
+        "id": 55,
+        "time": 61.67219924926758
+      },
+      {
+        "note": "上六四",
+        "notationIndex": 51,
+        "id": 56,
+        "time": 62.97251510620117
+      },
+      {
+        "note": "又上五七",
+        "notationIndex": 52,
+        "id": 57,
+        "time": 63.553016662597656
+      },
+      {
+        "note": "下六四",
+        "notationIndex": 53,
+        "id": 58,
+        "time": 64.20317840576172
+      },
+      {
+        "note": "下七",
+        "notationIndex": 54,
+        "id": 59,
+        "time": 65.36417388916016
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 55,
+        "id": 60,
+        "time": 66.17687225341797
+      },
+      {
+        "note": "剔四散三如一",
+        "notationIndex": 56,
+        "id": 61,
+        "time": 66.54839324951172
+      },
+      {
+        "note": "勾一",
+        "notationIndex": 57,
+        "id": 62,
+        "time": 67.89514923095703
+      },
+      {
+        "note": "勾二",
+        "notationIndex": 58,
+        "id": 63,
+        "time": 68.77750396728516
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 59,
+        "id": 64,
+        "time": 69.0793685913086
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 60,
+        "id": 65,
+        "time": 70.2171401977539
+      },
+      {
+        "note": "双弹",
+        "notationIndex": 61,
+        "id": 66,
+        "time": 71.4942398071289
+      },
+      {
+        "note": "双弹",
+        "notationIndex": 61,
+        "id": 67,
+        "time": 72.67845916748047
+      },
+      {
+        "note": "勾一",
+        "notationIndex": 62,
+        "id": 68,
+        "time": 73.95555877685547
+      },
+      {
+        "note": "勾二",
+        "notationIndex": 63,
+        "id": 69,
+        "time": 74.51283264160156
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 64,
+        "id": 70,
+        "time": 75.09333038330078
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 65,
+        "id": 71,
+        "time": 76.23110961914062
+      },
+      {
+        "note": "挑四",
+        "notationIndex": 66,
+        "id": 72,
+        "time": 78.57632446289062
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 67,
+        "id": 73,
+        "time": 79.76054382324219
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 68,
+        "id": 74,
+        "time": 80.8750991821289
+      },
+      {
+        "note": "吟（上）",
+        "notationIndex": 69,
+        "id": 75,
+        "time": 81.40916442871094
+      },
+      {
+        "note": "剔四",
+        "notationIndex": 70,
+        "id": 76,
+        "time": 81.94322204589844
+      },
+      {
+        "note": "撞",
+        "notationIndex": 71,
+        "id": 77,
+        "time": 82.31474304199219
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 72,
+        "id": 78,
+        "time": 82.77913665771484
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 73,
+        "id": 79,
+        "time": 83.01133728027344
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 74,
+        "id": 80,
+        "time": 84.17233276367188
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 75,
+        "id": 81,
+        "time": 86.0067138671875
+      },
+      {
+        "note": "打圆勾",
+        "notationIndex": 76,
+        "id": 82,
+        "time": 86.2389144897461
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 77,
+        "id": 83,
+        "time": 86.51754760742188
+      },
+      {
+        "note": "打圆勾",
+        "notationIndex": 78,
+        "id": 84,
+        "time": 87.02838897705078
+      },
+      {
+        "note": "打圆挑五",
+        "notationIndex": 79,
+        "id": 85,
+        "time": 87.56244659423828
+      },
+      {
+        "note": "应和挑六",
+        "notationIndex": 80,
+        "id": 86,
+        "time": 88.63056945800781
+      },
+      {
+        "note": "就下十八挑五",
+        "notationIndex": 81,
+        "id": 87,
+        "time": 89.72190856933594
+      },
+      {
+        "note": "挑四",
+        "notationIndex": 82,
+        "id": 88,
+        "time": 90.60426330566406
+      },
+      {
+        "note": "挑三",
+        "notationIndex": 82,
+        "id": 89,
+        "time": 90.85968017578125
+      },
+      {
+        "note": "挑二",
+        "notationIndex": 83,
+        "id": 90,
+        "time": 91.37052154541016
+      },
+      {
+        "note": "勾一",
+        "notationIndex": 84,
+        "id": 91,
+        "time": 91.92780303955078
+      },
+      {
+        "note": "猱",
+        "notationIndex": 85,
+        "id": 92,
+        "time": 92.45024871826172
+      },
+      {
+        "note": "上十",
+        "notationIndex": 86,
+        "id": 93,
+        "time": 93.46031951904297
+      },
+      {
+        "note": "上九应和挑四",
+        "notationIndex": 87,
+        "id": 94,
+        "time": 94.22657775878906
+      },
+      {
+        "note": "上八",
+        "notationIndex": 88,
+        "id": 95,
+        "time": 95.42240142822266
+      },
+      {
+        "note": "上七",
+        "notationIndex": 89,
+        "id": 96,
+        "time": 95.8984146118164
+      },
+      {
+        "note": "挑三",
+        "notationIndex": 90,
+        "id": 97,
+        "time": 96.59500885009766
+      },
+      {
+        "note": "勾一",
+        "notationIndex": 91,
+        "id": 98,
+        "time": 97.80245208740234
+      },
+      {
+        "note": "挑三",
+        "notationIndex": 92,
+        "id": 99,
+        "time": 99.2420883178711
+      },
+      {
+        "note": "勾六",
+        "notationIndex": 93,
+        "id": 100,
+        "time": 101.74983978271484
+      },
+      {
+        "note": "抹七",
+        "notationIndex": 94,
+        "id": 101,
+        "time": 104.18793487548828
+      },
+      {
+        "note": "吟",
+        "notationIndex": 95,
+        "id": 102,
+        "time": 105.39537048339844
+      },
+      {
+        "note": "上七六",
+        "notationIndex": 96,
+        "id": 103,
+        "time": 105.88299560546875
+      },
+      {
+        "note": "挑七",
+        "notationIndex": 97,
+        "id": 104,
+        "time": 106.44026947021484
+      },
+      {
+        "note": "吟",
+        "notationIndex": 98,
+        "id": 105,
+        "time": 107.50839233398438
+      },
+      {
+        "note": "勾六",
+        "notationIndex": 99,
+        "id": 106,
+        "time": 108.66938781738281
+      },
+      {
+        "note": "上七九",
+        "notationIndex": 100,
+        "id": 107,
+        "time": 109.99292755126953
+      },
+      {
+        "note": "吟",
+        "notationIndex": 101,
+        "id": 108,
+        "time": 111.03782653808594
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 102,
+        "id": 109,
+        "time": 111.64154052734375
+      },
+      {
+        "note": "下九",
+        "notationIndex": 103,
+        "id": 110,
+        "time": 112.15238189697266
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 104,
+        "id": 111,
+        "time": 112.68643951416016
+      },
+      {
+        "note": "勾五",
+        "notationIndex": 105,
+        "id": 112,
+        "time": 113.26693725585938
+      },
+      {
+        "note": "双猱",
+        "notationIndex": 106,
+        "id": 113,
+        "time": 113.80099487304688
+      },
+      {
+        "note": "掩",
+        "notationIndex": 107,
+        "id": 114,
+        "time": 114.84589385986328
+      },
+      {
+        "note": "勾六",
+        "notationIndex": 108,
+        "id": 115,
+        "time": 115.4263916015625
+      },
+      {
+        "note": "进",
+        "notationIndex": 109,
+        "id": 116,
+        "time": 116.35519409179688
+      },
+      {
+        "note": "复",
+        "notationIndex": 110,
+        "id": 117,
+        "time": 116.63383483886719
+      },
+      {
+        "note": "勾七",
+        "notationIndex": 111,
+        "id": 118,
+        "time": 117.6787338256836
+      },
+      {
+        "note": "吟",
+        "notationIndex": 112,
+        "id": 119,
+        "time": 117.88771057128906
+      },
+      {
+        "note": "上七六",
+        "notationIndex": 113,
+        "id": 120,
+        "time": 118.83972930908203
+      },
+      {
+        "note": "轮七",
+        "notationIndex": 114,
+        "id": 121,
+        "time": 119.94267272949219
+      },
+      {
+        "note": "轮七",
+        "notationIndex": 114,
+        "id": 122,
+        "time": 120.03555297851562
+      },
+      {
+        "note": "轮七",
+        "notationIndex": 114,
+        "id": 123,
+        "time": 120.11682891845703
+      },
+      {
+        "note": "进",
+        "notationIndex": 115,
+        "id": 124,
+        "time": 121.11528015136719
+      },
+      {
+        "note": "复",
+        "notationIndex": 116,
+        "id": 125,
+        "time": 121.6261215209961
+      },
+      {
+        "note": "下九吟",
+        "notationIndex": 117,
+        "id": 126,
+        "time": 122.6478042602539
+      },
+      {
+        "note": "勾六",
+        "notationIndex": 118,
+        "id": 127,
+        "time": 124.5053939819336
+      },
+      {
+        "note": "上七九",
+        "notationIndex": 119,
+        "id": 128,
+        "time": 125.71283721923828
+      },
+      {
+        "note": "缓吟",
+        "notationIndex": 120,
+        "id": 129,
+        "time": 125.96825408935547
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 121,
+        "id": 130,
+        "time": 127.40789031982422
+      },
+      {
+        "note": "下九",
+        "notationIndex": 122,
+        "id": 131,
+        "time": 127.94194793701172
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 123,
+        "id": 132,
+        "time": 128.4876251220703
+      },
+      {
+        "note": "小撮五二",
+        "notationIndex": 124,
+        "id": 133,
+        "time": 129.03329467773438
+      },
+      {
+        "note": "猱",
+        "notationIndex": 125,
+        "id": 134,
+        "time": 130.13623046875
+      },
+      {
+        "note": "小撮六三",
+        "notationIndex": 126,
+        "id": 135,
+        "time": 131.1927490234375
+      },
+      {
+        "note": "上九",
+        "notationIndex": 127,
+        "id": 136,
+        "time": 131.9822235107422
+      },
+      {
+        "note": "小撮七五",
+        "notationIndex": 128,
+        "id": 137,
+        "time": 132.23764038085938
+      },
+      {
+        "note": "吟",
+        "notationIndex": 129,
+        "id": 138,
+        "time": 132.8413543701172
+      },
+      {
+        "note": "小撮六四",
+        "notationIndex": 130,
+        "id": 139,
+        "time": 133.2825469970703
+      },
+      {
+        "note": "上八",
+        "notationIndex": 131,
+        "id": 140,
+        "time": 133.7933807373047
+      },
+      {
+        "note": "小撮六四",
+        "notationIndex": 132,
+        "id": 141,
+        "time": 134.8150634765625
+      },
+      {
+        "note": "下九",
+        "notationIndex": 133,
+        "id": 142,
+        "time": 135.27944946289062
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 134,
+        "id": 143,
+        "time": 135.81350708007812
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 135,
+        "id": 144,
+        "time": 136.30113220214844
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 136,
+        "id": 145,
+        "time": 136.85841369628906
+      },
+      {
+        "note": "就上九",
+        "notationIndex": 137,
+        "id": 146,
+        "time": 137.56661987304688
+      },
+      {
+        "note": "带起",
+        "notationIndex": 138,
+        "id": 147,
+        "time": 137.92652893066406
+      },
+      {
+        "note": "挑七",
+        "notationIndex": 139,
+        "id": 148,
+        "time": 138.46058654785156
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 140,
+        "id": 149,
+        "time": 139.5751495361328
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 141,
+        "id": 150,
+        "time": 141.20054626464844
+      },
+      {
+        "note": "打圆勾",
+        "notationIndex": 142,
+        "id": 151,
+        "time": 141.40953063964844
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 143,
+        "id": 152,
+        "time": 141.66494750976562
+      },
+      {
+        "note": "打圆勾",
+        "notationIndex": 144,
+        "id": 153,
+        "time": 142.15255737304688
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 145,
+        "id": 154,
+        "time": 142.6401824951172
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 146,
+        "id": 155,
+        "time": 143.661865234375
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 147,
+        "id": 156,
+        "time": 144.72998046875
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 148,
+        "id": 157,
+        "time": 145.7284393310547
+      },
+      {
+        "note": "游吟",
+        "notationIndex": 149,
+        "id": 158,
+        "time": 146.21604919433594
+      },
+      {
+        "note": "剔四",
+        "notationIndex": 150,
+        "id": 159,
+        "time": 146.72689819335938
+      },
+      {
+        "note": "撞",
+        "notationIndex": 151,
+        "id": 160,
+        "time": 147.11001586914062
+      },
+      {
+        "note": "掐起",
+        "notationIndex": 152,
+        "id": 161,
+        "time": 147.49314880371094
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 153,
+        "id": 162,
+        "time": 147.72535705566406
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 154,
+        "id": 163,
+        "time": 148.79347229003906
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 155,
+        "id": 164,
+        "time": 150.37242126464844
+      },
+      {
+        "note": "打圆勾",
+        "notationIndex": 156,
+        "id": 165,
+        "time": 150.58140563964844
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 157,
+        "id": 166,
+        "time": 150.86004638671875
+      },
+      {
+        "note": "打圆勾",
+        "notationIndex": 158,
+        "id": 167,
+        "time": 151.34767150878906
+      },
+      {
+        "note": "打圆挑",
+        "notationIndex": 159,
+        "id": 168,
+        "time": 151.85850524902344
+      },
+      {
+        "note": "上九应和挑六",
+        "notationIndex": 160,
+        "id": 169,
+        "time": 152.9033966064453
+      },
+      {
+        "note": "下十八应和挑五",
+        "notationIndex": 161,
+        "id": 170,
+        "time": 153.9715118408203
+      },
+      {
+        "note": "历四",
+        "notationIndex": 162,
+        "id": 171,
+        "time": 154.73777770996094
+      },
+      {
+        "note": "历三",
+        "notationIndex": 162,
+        "id": 172,
+        "time": 154.99319458007812
+      },
+      {
+        "note": "挑二",
+        "notationIndex": 163,
+        "id": 173,
+        "time": 155.50404357910156
+      },
+      {
+        "note": "勾一",
+        "notationIndex": 164,
+        "id": 174,
+        "time": 155.9916534423828
+      },
+      {
+        "note": "猱",
+        "notationIndex": 165,
+        "id": 175,
+        "time": 156.5024871826172
+      },
+      {
+        "note": "上十",
+        "notationIndex": 166,
+        "id": 176,
+        "time": 157.4777374267578
+      },
+      {
+        "note": "上九应和挑四",
+        "notationIndex": 167,
+        "id": 177,
+        "time": 158.17433166503906
+      },
+      {
+        "note": "上八略吟",
+        "notationIndex": 168,
+        "id": 178,
+        "time": 159.2656707763672
+      },
+      {
+        "note": "上七",
+        "notationIndex": 169,
+        "id": 179,
+        "time": 159.78811645507812
+      },
+      {
+        "note": "挑三",
+        "notationIndex": 170,
+        "id": 180,
+        "time": 160.38023376464844
+      },
+      {
+        "note": "勾一",
+        "notationIndex": 171,
+        "id": 181,
+        "time": 161.56443786621094
+      },
+      {
+        "note": "抹三",
+        "notationIndex": 172,
+        "id": 182,
+        "time": 162.77188110351562
+      },
+      {
+        "note": "小撮一三",
+        "notationIndex": 173,
+        "id": 183,
+        "time": 165.14031982421875
+      },
+      {
+        "note": "泛起勾一",
+        "notationIndex": 174,
+        "id": 184,
+        "time": 168.53042602539062
+      },
+      {
+        "note": "勾二",
+        "notationIndex": 175,
+        "id": 185,
+        "time": 169.4127960205078
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 176,
+        "id": 186,
+        "time": 169.7146453857422
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 177,
+        "id": 187,
+        "time": 170.2487030029297
+      },
+      {
+        "note": "勾五",
+        "notationIndex": 178,
+        "id": 188,
+        "time": 170.75955200195312
+      },
+      {
+        "note": "抹六",
+        "notationIndex": 179,
+        "id": 189,
+        "time": 171.29360961914062
+      },
+      {
+        "note": "挑六",
+        "notationIndex": 179,
+        "id": 190,
+        "time": 171.804443359375
+      },
+      {
+        "note": "挑五",
+        "notationIndex": 180,
+        "id": 191,
+        "time": 172.36172485351562
+      },
+      {
+        "note": "历四",
+        "notationIndex": 181,
+        "id": 192,
+        "time": 173.91746520996094
+      },
+      {
+        "note": "历三",
+        "notationIndex": 181,
+        "id": 193,
+        "time": 174.17288208007812
+      },
+      {
+        "note": "勾二",
+        "notationIndex": 182,
+        "id": 194,
+        "time": 174.52117919921875
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 183,
+        "id": 195,
+        "time": 175.1016845703125
+      },
+      {
+        "note": "挑四",
+        "notationIndex": 184,
+        "id": 196,
+        "time": 175.72862243652344
+      },
+      {
+        "note": "勾三泛止",
+        "notationIndex": 185,
+        "id": 197,
+        "time": 177.19146728515625
+      },
+      {
+        "note": "托七",
+        "notationIndex": 186,
+        "id": 198,
+        "time": 179.88499450683594
+      },
+      {
+        "note": "泛起挑六",
+        "notationIndex": 187,
+        "id": 199,
+        "time": 182.83392333984375
+      },
+      {
+        "note": "历五",
+        "notationIndex": 188,
+        "id": 200,
+        "time": 184.99337768554688
+      },
+      {
+        "note": "历四",
+        "notationIndex": 188,
+        "id": 201,
+        "time": 185.28363037109375
+      },
+      {
+        "note": "勾三",
+        "notationIndex": 189,
+        "id": 202,
+        "time": 185.64353942871094
+      },
+      {
+        "note": "勾四",
+        "notationIndex": 190,
+        "id": 203,
+        "time": 187.05995178222656
+      },
+      {
+        "note": "勾三泛止",
+        "notationIndex": 191,
+        "id": 204,
+        "time": 188.56924438476562
+      },
+      {
+        "note": "劈七",
+        "notationIndex": 192,
+        "id": 205,
+        "time": 191.47174072265625
+      },
+      {
+        "note": "大撮三七",
+        "notationIndex": 193,
+        "id": 206,
+        "time": 195.09405517578125
+      }
+    ],
+    "title": ""
+  }]
+}

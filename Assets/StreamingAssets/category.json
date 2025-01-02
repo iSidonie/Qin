@@ -27,6 +27,17 @@
           "tracks": [
             {
               "id": "00-01-000",
+              "uid": "000004",
+              "name": "良宵引",
+              "artist": "龚一",
+              "version": "古琴演奏法",
+              "audioFile": "audio/LiangXiaoYin_GongYi_Audio.json",
+              "positionFile": "position/LiangXiaoYin_Position.json",
+              "musicFile": "music/LiangXiaoYin_GongYi.mp3",
+              "sheetFile": "sheet/LiangXiaoYin_{n}.png"
+            },
+            {
+              "id": "00-01-001",
               "uid": "000001",
               "name": "湘妃怨",
               "artist": "龚一",
@@ -37,7 +48,7 @@
               "sheetFile": "sheet/XiangFeiYuan_{n}.png"
             },
             {
-              "id": "00-01-001",
+              "id": "00-01-002",
               "uid": "000002",
               "name": "湘妃怨",
               "artist": "马一超",
