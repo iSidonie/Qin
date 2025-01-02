@@ -63,6 +63,8 @@ public class NotationPlaybackManager : MonoBehaviour
     /// </summary>
     private void LoadNotations()
     {
+        currentIndex = -1;
+
         notations = new List<NotationAudioData>();
         
         // 加载所有减字到列表

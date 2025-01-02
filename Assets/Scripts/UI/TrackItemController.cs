@@ -59,7 +59,7 @@ public class TrackItemController : MonoBehaviour
     /// </summary>
     private void Select()
     {
-        Debug.Log("change selectedColor");
+        //Debug.Log("change selectedColor");
         isSelected = true;
         background.color = selectedColor; // 改变背景颜色
         currentSelected = this; // 更新全局选中项

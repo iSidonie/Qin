@@ -104,7 +104,6 @@ public class ABLoopManager : MonoBehaviour
                 // 倒序找到第一个比maxStart小的endList
                 for (int i = endList.Count - 1; i >= 0; i--)
                 {
-                    Debug.Log(endList[i]);
                     if (endList[i] < startList[maxStart])
                     {
                         loopEnd = endList[i];
@@ -114,7 +113,7 @@ public class ABLoopManager : MonoBehaviour
             }
         }
 
-        Debug.Log($"again{loopStart}, {loopEnd}");
+        //Debug.Log($"again{loopStart}, {loopEnd}");
 
         EnableABLoop();
     }

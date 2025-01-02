@@ -46,7 +46,6 @@ public class LocalFileManager : MonoBehaviour
     public IEnumerator LoadAudioClip(string path, System.Action<AudioClip> callback)
     {
         string fullPath = Path.Combine(Application.streamingAssetsPath, path);
-        Debug.Log(fullPath);
         UnityWebRequest uwr = new UnityWebRequest(fullPath, UnityWebRequest.kHttpVerbGET);
         uwr.downloadHandler = new DownloadHandlerAudioClip(fullPath, AudioType.MPEG);
 

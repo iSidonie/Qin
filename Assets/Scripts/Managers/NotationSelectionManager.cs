@@ -48,6 +48,7 @@ public class NotationSelectionManager : MonoBehaviour
         NotationSelectHandler.Instance.OnNotationStartDragging += StartDragging;
         NotationSelectHandler.Instance.OnNotationSelecting += OnNotationSelect;
         NotationSelectHandler.Instance.OnNotationEndDragging += EndDragging;
+        EventManager.OnTrackSelected += (value) => Reset();
     }
 
     private void OnDisable()
@@ -55,12 +56,22 @@ public class NotationSelectionManager : MonoBehaviour
         NotationSelectHandler.Instance.OnNotationStartDragging -= StartDragging;
         NotationSelectHandler.Instance.OnNotationSelecting -= OnNotationSelect;
         NotationSelectHandler.Instance.OnNotationEndDragging -= EndDragging;
+        EventManager.OnTrackSelected -= (value) => Reset();
     }
 
-    // 处理单击选择/取消选择
-    public void OnNotationClick(int id)
+    private void Reset()
     {
-        // Debug.Log("Clicked");
+        rangeStart = -1;
+        rangeEnd = -1;
+        firstSelected = -1;
+
+        SelectedChanged?.Invoke(rangeStart, rangeEnd);
+    }
+
+// 处理单击选择/取消选择
+public void OnNotationClick(int id)
+    {
+        //Debug.Log($"Clicked{id}, rangeStart{rangeStart}, rangeEnd{rangeEnd}");
         if (id >= rangeStart && id <= rangeEnd)
         {
             // 已选择，取消选择
@@ -109,7 +120,7 @@ public class NotationSelectionManager : MonoBehaviour
 
     public void StartDragging(int id)
     {
-        //Debug.Log("Pressed");
+        //Debug.Log($"Pressed{id}");
         rangeStart = id;
         rangeEnd = id + GetSubNum(id);
         firstSelected = id;
@@ -119,7 +130,7 @@ public class NotationSelectionManager : MonoBehaviour
 
     public void EndDragging()
     {
-        //Debug.Log("Released");
+        //Debug.Log($"Released");
         firstSelected = -1;
 
         ScrollManager.Instance.SetEnable(true);
@@ -127,7 +138,7 @@ public class NotationSelectionManager : MonoBehaviour
 
     public void OnNotationSelect(int id)
     {
-        // Debug.Log($"now selecting{id}");
+        //Debug.Log($"now selecting{id}");
         rangeStart = Mathf.Min(firstSelected, id);
         rangeEnd = Mathf.Max(firstSelected, id);
         rangeEnd = rangeEnd + GetSubNum(rangeEnd);

@@ -64,6 +64,8 @@ public class DataManager : MonoBehaviour
 
     private void LoadTrackData(TrackData trackData)
     {
+        Reset();
+
         sheetFileName = trackData.sheetFile; 
 
         Debug.Log($"Loading track Json: {trackData.name}");
@@ -201,5 +203,23 @@ public class DataManager : MonoBehaviour
     public string GetSheetFileName()
     {
         return sheetFileName;
+    }
+
+    private void Reset()
+    {
+        audioCache.Clear();
+        positionCache.Clear();
+        parentMap.Clear();
+        positionToAudioMap.Clear();
+        
+        if(audioSections != null)
+        {
+            audioSections.Clear();
+        }
+
+        if (positionPages != null)
+        {
+            positionPages.Clear();
+        }
     }
 }

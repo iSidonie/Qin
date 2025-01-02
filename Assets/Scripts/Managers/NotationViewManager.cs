@@ -62,12 +62,14 @@ public class NotationViewManager : MonoBehaviour
     {
         NotationPlaybackManager.Instance.OnNotationChanged += (value1, value2) => UpdateHighlight(value2);
         NotationSelectionManager.SelectedChanged += UpdateSelection;
+        EventManager.OnTrackSelected += (value) => Reset();
     }
 
     private void OnDisable()
     {
         NotationPlaybackManager.Instance.OnNotationChanged -= (value1, value2) => UpdateHighlight(value2);
         NotationSelectionManager.SelectedChanged -= UpdateSelection;
+        EventManager.OnTrackSelected -= (value) => Reset();
     }
 
     void Start()
@@ -87,13 +89,24 @@ public class NotationViewManager : MonoBehaviour
         continuationNotationPool = new GenericObjectPool<Image>(continuationNotationPrefab, null, 10);
     }
 
+    private void Reset()
+    {
+        currentPage = 0;
+        currentHighlightedId = -1;
+        rangeStart = 0;
+        rangeEnd = -1;
+    }
+
     /// <summary>
     /// ÉèÖÃ¼õ×ÖµÄ×´Ì¬¡£
     /// </summary>
     public void SetNotationState(int id, NotationState state)
     {
+        // Debug.Log(notationImages.Count);
         if (!notationImages.ContainsKey(id))
             return;
+
+        // Debug.Log($"SetNotationState {id}, {state}");
 
         Image image = notationImages[id];
 
@@ -141,7 +154,7 @@ public class NotationViewManager : MonoBehaviour
             if (currentPage != DataManager.Instance.GetPageByPosition(id))
             {
                 currentPage = DataManager.Instance.GetPageByPosition(id);
-                Debug.Log($"changePageTo{currentPage}");
+                // Debug.Log($"changePageTo{currentPage}");
                 PageManager.Instance.SlideToPage(currentPage);
             }
             ScrollManager.Instance.ScrollToCenter(notationImages[id].GetComponent<RectTransform>(), time);
@@ -153,6 +166,7 @@ public class NotationViewManager : MonoBehaviour
     /// </summary>
     public void UpdateSelection(int start, int end)
     {
+        //Debug.Log($"ViewManager UpdateSelection {start}, {end}");
         for (int i = rangeStart; i <= rangeEnd; i++)
         {
             SetNotationState(i, NotationState.Hidden);
@@ -178,6 +192,7 @@ public class NotationViewManager : MonoBehaviour
     {
         if (notationImages.ContainsKey(id))
         {
+            SetNotationState(id, NotationState.Hidden);
             notationImages.Remove(id);
         }
     }
