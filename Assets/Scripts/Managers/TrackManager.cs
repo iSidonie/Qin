@@ -47,13 +47,16 @@ public class TrackManager : MonoBehaviour
     {
         // 创建级别按钮
         GameObject levelButton = Instantiate(levelButtonPrefab, contentParent);
+        //levelButton.transform.SetParent(contentParent, false);
+        //LayoutRebuilder.ForceRebuildLayoutImmediate(contentParent.GetComponent<RectTransform>());
+
         levelButton.GetComponentInChildren<TextMeshProUGUI>().text = level.name;
 
         // 设置折叠/展开逻辑
         LevelButtonController controller = levelButton.GetComponent<LevelButtonController>();
         controller.InitializeTracks(level.tracks);
         
-        if (level.levelId == defaultTrack.id.Substring(3, 2))
+        if (level.id == defaultTrack.id.Substring(3, 2))
         {
             controller.ToggleExpand();
             controller.SimulateTrackClick(defaultTrack.id);
@@ -62,7 +65,6 @@ public class TrackManager : MonoBehaviour
 
     private void SetDefaultTrack()
     {
-
         var defaultTrackId = PlayerPrefs.GetString("SelectedTrackId", null);
 
         if (!string.IsNullOrEmpty(defaultTrackId))

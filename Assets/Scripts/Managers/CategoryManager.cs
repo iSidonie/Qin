@@ -47,14 +47,14 @@ public class CategoryManager : MonoBehaviour
 
     public List<LevelData> GetLevels(string categoryId)
     {
-        var category = categoryRoot?.categories.Find(c => c.categoryId == categoryId);
+        var category = categoryRoot?.categories.Find(c => c.id == categoryId);
         return category?.levels;
     }
 
     public List<TrackData> GetTracks(string categoryId, string levelId)
     {
         var levels = GetLevels(categoryId);
-        var level = levels?.Find(l => l.levelId == levelId);
+        var level = levels?.Find(l => l.id == levelId);
         return level?.tracks;
     }
 

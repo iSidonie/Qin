@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.Audio;
 using System.IO;
 
@@ -70,7 +69,8 @@ public class AudioPlayer : MonoBehaviour
     {
         Debug.Log($"Loading track Aduio: {trackData.name}");
 
-        StartCoroutine(LoadAudioClip(trackData.musicFile));
+        // 从 LocalFileManager 加载音频文件
+        StartCoroutine(LocalFileManager.Instance.LoadAudioClip(trackData.musicFile, OnAudioLoaded));
     }
 
     void Update()
@@ -83,26 +83,18 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    IEnumerator LoadAudioClip(string path)
+    // 音频加载完成的回调方法
+    private void OnAudioLoaded(AudioClip audioClip)
     {
-        string musicPath = Path.Combine(Application.streamingAssetsPath, $"music/{path}");
-
-        // 使用 UnityWebRequest 加载音频文件
-        UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(musicPath, AudioType.MPEG);
-        yield return uwr.SendWebRequest();
-
-        if (uwr.result == UnityWebRequest.Result.Success)
+        if (audioClip != null)
         {
-            // 获取加载的音频文件并赋值给 AudioSource
-            AudioClip audioClip = DownloadHandlerAudioClip.GetContent(uwr);
             audioSource.clip = audioClip;
-
-            // 触发时间更新事件，初始化 UI 显示
             AudioTimeUpdated?.Invoke(audioSource.time, audioSource.clip.length);
+            Debug.Log("Audio loaded successfully.");
         }
         else
         {
-            Debug.LogError("Failed to load audio clip: " + uwr.error);
+            Debug.LogError("Failed to load audio clip.");
         }
     }
 

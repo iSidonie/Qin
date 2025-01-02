@@ -5,26 +5,20 @@ using System.Collections.Generic;
 public class TrackData
 {
     public string id;
+    public string uid;
     public string name;
     public string artist;
     public string version;
     public string audioFile;
     public string positionFile;
     public string musicFile;
-    public SheetPages sheetPages;
-}
-
-[Serializable]
-public class SheetPages
-{
-    public string baseName;
-    public int pageCount;
+    public string sheetFile;
 }
 
 [Serializable]
 public class LevelData
 {
-    public string levelId;
+    public string id;
     public string name;
     public List<TrackData> tracks;
 }
@@ -32,7 +26,7 @@ public class LevelData
 [Serializable]
 public class CategoryData
 {
-    public string categoryId;
+    public string id;
     public string name;
     public List<LevelData> levels;
 }

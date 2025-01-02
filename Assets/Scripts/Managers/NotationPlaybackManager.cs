@@ -101,9 +101,16 @@ public class NotationPlaybackManager : MonoBehaviour
     /// </summary>
     private void UpdateNotationTimeRange(float totalTime)
     {
+        // 尚未加载json文件时，audio加载了调用AudioTimeUpdated触发
+        if (notations.Count == 0)
+        {
+            return;
+        }
+
         if (currentIndex == -1)
         {
             notationStartTime = 0.0f;
+            Debug.Log(notations.Count);
             notationEndTime = notations[0].time;
         }
         else if (currentIndex == notations.Count - 1)

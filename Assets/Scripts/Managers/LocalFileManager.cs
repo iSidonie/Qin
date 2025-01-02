@@ -43,16 +43,31 @@ public class LocalFileManager : MonoBehaviour
         }
     }
 
-    public AudioClip LoadAudioClip(string filePath)
+    public IEnumerator LoadAudioClip(string path, System.Action<AudioClip> callback)
     {
-        if (File.Exists(filePath))
+        string fullPath = Path.Combine(Application.streamingAssetsPath, path);
+        Debug.Log(fullPath);
+        UnityWebRequest uwr = new UnityWebRequest(fullPath, UnityWebRequest.kHttpVerbGET);
+        uwr.downloadHandler = new DownloadHandlerAudioClip(fullPath, AudioType.MPEG);
+
+        yield return uwr.SendWebRequest();
+
+        if (uwr.result == UnityWebRequest.Result.Success)
         {
-            string url = "file://" + filePath;
-            var audioClip = new WWW(url).GetAudioClip(false, true, AudioType.MPEG);
-            return audioClip;
+            AudioClip audioClip = DownloadHandlerAudioClip.GetContent(uwr);
+            if (audioClip == null)
+            {
+                Debug.LogError($"Failed to decode audio clip from {fullPath}.");
+            }
+            else
+            {
+                callback?.Invoke(audioClip);
+            }
         }
-        Debug.LogError($"Audio file not found: {filePath}");
-        return null;
+        else
+        {
+            Debug.LogError($"Error loading audio: {uwr.error}");
+        }
     }
 
     /// <summary>

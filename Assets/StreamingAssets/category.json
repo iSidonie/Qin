@@ -1,83 +1,75 @@
 {
   "categories": [
     {
-      "categoryId": "00",
+      "id": "00",
       "name": "古琴考级曲集",
       "levels": [
         {
-          "levelId": "00",
+          "id": "00",
           "name": "第一级",
           "tracks": [
             {
               "id": "00-00-000",
+              "uid": "000000",
               "name": "秋风词",
               "artist": "龚一",
               "version": "古琴演奏法",
-              "audioFile": "QiuFengCi_GongYi_Audio.json",
-              "positionFile": "QiuFengCi_GongYi_Position.json",
-              "musicFile": "QiuFengCi_GongYi.mp3",
-              "sheetPages": {
-                "baseName": "QiuFengCi_GongYi_{n}.png",
-                "pageCount": 1
-              }
+              "audioFile": "audio/QiuFengCi_GongYi_Audio.json",
+              "positionFile": "position/QiuFengCi_Position.json",
+              "musicFile": "music/QiuFengCi_GongYi.mp3",
+              "sheetFile": "sheet/QiuFengCi_{n}.png"
             }
           ]
         },
         {
-          "levelId": "01",
+          "id": "01",
           "name": "第二级",
           "tracks": [
             {
               "id": "00-01-000",
+              "uid": "000001",
               "name": "湘妃怨",
               "artist": "龚一",
               "version": "古琴演奏法",
-              "audioFile": "XiangFeiYuan_GongYi_Audio.json",
-              "positionFile": "XiangFeiYuan_GongYi_Position.json",
-              "musicFile": "XiangFeiYuan_GongYi.mp3",
-              "sheetPages": {
-                "baseName": "XiangFeiYuan_GongYi_{n}.png",
-                "pageCount": 2
-              }
+              "audioFile": "audio/XiangFeiYuan_GongYi_Audio.json",
+              "positionFile": "position/XiangFeiYuan_Position.json",
+              "musicFile": "music/XiangFeiYuan_GongYi.mp3",
+              "sheetFile": "sheet/XiangFeiYuan_{n}.png"
             },
             {
               "id": "00-01-001",
+              "uid": "000002",
               "name": "湘妃怨",
               "artist": "马一超",
               "version": "不知道",
-              "audioFile": "XiangFeiYuan_MaYiChao_Audio.json",
-              "positionFile": "XiangFeiYuan_GongYi_Position.json",
-              "musicFile": "XiangFeiYuan_MaYiChao.mp3",
-              "sheetPages": {
-                "baseName": "XiangFeiYuan_GongYi_{n}.png",
-                "pageCount": 2
-              }
+              "audioFile": "audio/XiangFeiYuan_MaYiChao_Audio.json",
+              "positionFile": "position/XiangFeiYuan_Position.json",
+              "musicFile": "music/XiangFeiYuan_MaYiChao.mp3",
+              "sheetFile": "sheet/XiangFeiYuan_{n}.png"
             }
           ]
         },
         {
-          "levelId": "02",
+          "id": "02",
           "name": "第三级",
           "tracks": [
             {
               "id": "00-02-000",
+              "uid": "000003",
               "name": "春晓吟",
               "artist": "龚一",
               "version": "古琴演奏法",
-              "audioFile": "ChunXiaoYin_GongYi_Audio.json",
-              "positionFile": "ChunXiaoYin_GongYi_Position.json",
-              "musicFile": "ChunXiaoYin_GongYi.mp3",
-              "sheetPages": {
-                "baseName": "ChunXiaoYin_GongYi_{n}.png",
-                "pageCount": 3
-              }
+              "audioFile": "audio/ChunXiaoYin_GongYi_Audio.json",
+              "positionFile": "position/ChunXiaoYin_Position.json",
+              "musicFile": "music/ChunXiaoYin_GongYi.mp3",
+              "sheetFile": "sheet/ChunXiaoYin_{n}.png"
             }
           ]
         }
       ]
     },
     {
-      "categoryId": "01",
+      "id": "01",
       "name": "其他",
       "levels": []
     }

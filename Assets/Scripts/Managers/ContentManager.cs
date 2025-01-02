@@ -29,8 +29,8 @@ public class ContentManager : MonoBehaviour
         if (page == null) return;
 
         // ¼ÓÔØÇúÆ×Í¼Æ¬
-        string baseName = DataManager.Instance.GetPageBaseName();
-        string imagePath = baseName.Replace("{n}", pageIndex.ToString());
+        string sheetFileName = DataManager.Instance.GetSheetFileName();
+        string imagePath = sheetFileName.Replace("{n}", pageIndex.ToString());
         var sheetImage = page.transform.Find("SheetImage").GetComponent<RawImage>();
         var rectTransform = sheetImage.GetComponent<RectTransform>();
 

@@ -35,7 +35,7 @@ public class DataManager : MonoBehaviour
     private List<SectionData> audioSections;
     private List<PageData> positionPages;
 
-    public string pageBaseName = "";
+    public string sheetFileName = "";
     
     void Awake()
     {
@@ -64,7 +64,8 @@ public class DataManager : MonoBehaviour
 
     private void LoadTrackData(TrackData trackData)
     {
-        pageBaseName = $"Sheets/{trackData.sheetPages.baseName}"; 
+        sheetFileName = trackData.sheetFile; 
+
         Debug.Log($"Loading track Json: {trackData.name}");
         // 加载音频和谱面数据
         StartCoroutine(LoadJsonData(trackData.positionFile, trackData.audioFile));
@@ -72,9 +73,6 @@ public class DataManager : MonoBehaviour
 
     private IEnumerator LoadJsonData(string positionPath, string audioPath)
     {
-        positionPath = $"json/{positionPath}";
-        audioPath = $"json/{audioPath}";
-
         Debug.Log($"Loading track Json: {positionPath}, {audioPath}");
 
         yield return LocalFileManager.Instance.LoadJsonAsync(positionPath, ParsePositionData);
@@ -200,8 +198,8 @@ public class DataManager : MonoBehaviour
         return positionToAudioMap[id];
     }
 
-    public string GetPageBaseName()
+    public string GetSheetFileName()
     {
-        return pageBaseName;
+        return sheetFileName;
     }
 }
